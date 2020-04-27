@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>HyperLink</title>
+    <style>
+a{
+    font-size: 20px;
+    color:goldenrod;
+    text-decoration: none;
+    
+}
+a:link{ /*기본 상태 a스타일*/
+	 color:LightCoral;
+}
+a:visited{
+	color:ForestGreen;
+}
+a:active{/*마우스 클릭한 상태*/
+ 	color:Indigo;
+ 	text-decoration: underline;
+}
+
+a:hover {
+	color:Olive;
+}
+
+    </style>
+</head>
+
+<body>
+<!--
+기본 구문 : <a href="url">link text</a>
+ 
+ target attribute
+	_blank - 새 윈도우나 탭에.
+	_self - 현재 브라우저창에 (디폴트)
+	_parent - 상위 frame 에
+	_top - 최 상위 윈도우에  
+ 
+ -->
+ <!--
+기본 구문 : <a href="url">link text</a>
+ 
+ target attribute
+	_blank - 새 윈도우나 탭에.
+	_self - 현재 브라우저창에 (디폴트)
+	_parent - 상위 frame 에
+	_top - 최 상위 윈도우에  
+ 
+ -->
+ 
+<a href="https://www.naver.com">네이버</a>
+<br>
+<a href="https://www.daum.net" target="_blank">다음</a>
+
+<br>
+
+<!-- 이미지링크 만들기 -->
+<a href="https://w3schools.com">
+<img src="https://www.w3schools.com/html/smiley.gif" alt="HTML tutoral" />
+</a>
+
+
+
+</body>
+</html>
