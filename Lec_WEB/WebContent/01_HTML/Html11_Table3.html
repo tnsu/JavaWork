@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Table3</title>
+<style>
+table, th, td {
+    border: 2px solid olive;  /* 두께, 선종류, 선색상 */
+    border-collapse: collapse; /* border 붙이기 */
+}
+
+th, td {
+	padding: 15px;	/* 셀 안쪽의 컨텐트와 border 사이 여백 */
+}
+
+th {
+	text-align: left;
+}
+table {
+	width: 100%;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+    <td rowspan="3">1</td>
+    <td colspan="3">2</td>
+  
+</tr>
+<tr>
+  
+    <td colspan="3">6</td>
+    
+</tr>
+<tr>
+ 
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+</tr>
+
+</table>
+<hr>
+<table>
+<tr>
+   <td rowspan="3">1</td>
+     <td colspan="3">2</td>
+
+</tr>
+<tr>
+   
+     <td colspan="2">6</td>
+    
+    <td>8</td>
+</tr>
+<tr>
+    
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+</tr>
+</table>
+<hr>
+<table>
+<tr>
+    <td colspan="2">1</td>
+   
+    <td colspan="2" rowspan="2">2</td>
+    
+    <td rowspan="3">3</td>
+</tr>
+<tr>
+    <td colspan="2">4</td>
+   
+   
+</tr>
+<tr>
+    <td colspan="2">5</td>
+    
+    <td>6</td>
+    <td>7</td>
+  
+</tr>
+</table>
+<hr>
+<table>
+<tr>
+    <td colspan="4" rowspan="4" style="background-color: orange;" width="60%" height="60%"></td>
+    <td  colspan="2" rowspan="2" style="background-color: yellow;" width="40%" height="40px"></td>
+   
+</tr>
+<tr>
+</tr>
+<tr>
+   
+    <td rowspan="2" style="background-color: pink" height="50px" width="20%"></td>
+    <td rowspan="2" style="background-color: pink"width="20%"></td>
+</tr>
+<tr>
+    
+    
+ 
+</tr>
+<tr>
+    <td colspan="2" rowspan="2"  style="background-color: black;"></td>
+   
+    <td colspan="2"></td>
+  
+    <td colspan="2" style="background-color: blue;"></td>
+    
+</tr>
+<tr>
+  
+    <td colspan="2"></td>
+   
+    <td colspan="2" style="background-color: gray;"></td>
+   
+</tr>
+
+</body>
+</html>
