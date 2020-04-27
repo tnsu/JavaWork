@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <title>Table3</title>
 <style>
+
 table, th, td {
-    border: 2px solid olive;  /* 두께, 선종류, 선색상 */
+    border: 1px solid olive;  /* 두께, 선종류, 선색상 */
     border-collapse: collapse; /* border 붙이기 */
 }
 
@@ -16,13 +17,20 @@ th, td {
 th {
 	text-align: left;
 }
-table {
-	width: 100%;
+#color {
+	border: 5px solid black;
+	 width: 500px; 
+	 height: 500px;
 }
+
+#color td{
+border: 5px solid black;
+}
+
 </style>
 </head>
 <body>
-<table>
+<table style="	width: 100%;">
 <tr>
     <td rowspan="3">1</td>
     <td colspan="3">2</td>
@@ -42,7 +50,7 @@ table {
 
 </table>
 <hr>
-<table>
+<table style="	width: 100%;">
 <tr>
    <td rowspan="3">1</td>
      <td colspan="3">2</td>
@@ -62,7 +70,7 @@ table {
 </tr>
 </table>
 <hr>
-<table>
+<table style="	width: 100%;">
 <tr>
     <td colspan="2">1</td>
    
@@ -84,39 +92,70 @@ table {
 </tr>
 </table>
 <hr>
-<table>
+
+<table id="color">
 <tr>
-    <td colspan="4" rowspan="4" style="background-color: orange;" width="60%" height="60%"></td>
-    <td  colspan="2" rowspan="2" style="background-color: yellow;" width="40%" height="40px"></td>
+    <td colspan="2"  style="border-top: 5px solid white;  border-left: 5px solid white; height: 10px"></td>
+    
+    <td colspan="3" style="border-top: 5px solid white;"></td>
    
+    <td colspan="2" style="border-top: 5px solid white; background-color: yellow; width: 65px; "></td>
+   
+    <td rowspan="6" style="border-top: 5px solid white; border-right: 5px solid white; width: 10px;"></td>
 </tr>
 <tr>
+    <td rowspan=" 2"  style="border-left: 5px solid white; width: 10px;"></td>
+    <td rowspan="4" colspan="4" style="background-color: orangered;" ></td>
+    
+    <td colspan="2" rowspan="2"  style=" background-color: yellow;"> </td>
+
+ 
+</tr>
+<tr style="height:120px;">
+   
+    
+  
+
 </tr>
 <tr>
-   
-    <td rowspan="2" style="background-color: pink" height="50px" width="20%"></td>
-    <td rowspan="2" style="background-color: pink"width="20%"></td>
+    <td rowspan="3"  style="border-left: 5px solid white;"></td>
+    
+    <td rowspan="2"></td>
+    <td  rowspan="2"></td>
+    
+</tr>
+<tr style="height:120px;">
+
+  
 </tr>
 <tr>
     
+    <td colspan="2" rowspan="2" style="background-color: black;"></td>
     
+    <td colspan="2"></td>
+   
+    <td colspan="2"></td>
+
  
 </tr>
 <tr>
-    <td colspan="2" rowspan="2"  style="background-color: black;"></td>
-   
+    <td rowspan="2"  style="border-left: 5px solid white; border-bottom: 5px solid white; background-color: yellow"></td>
+    
     <td colspan="2"></td>
   
-    <td colspan="2" style="background-color: blue;"></td>
-    
+    <td colspan="2" rowspan="2" style="  border-bottom: 5px solid white; background-color: blue;"></td>
+   
+    <td rowspan="2"  style=" border-right: 5px solid white; border-bottom: 5px solid white; background-color: orangered;"></td>
 </tr>
 <tr>
    
-    <td colspan="2"></td>
+    <td colspan="2" style="width: 60px; height: 10px; border-bottom: 5px solid white;"></td>
    
-    <td colspan="2" style="background-color: gray;"></td>
-   
-</tr>
+    <td colspan="2" style="width: 60px; height: 10px; border-bottom: 5px solid white; background-color: black;"></td>
 
+   
+
+</tr>
+</table>
 </body>
 </html>
