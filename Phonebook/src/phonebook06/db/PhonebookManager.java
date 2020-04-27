@@ -34,7 +34,7 @@ public class PhonebookManager implements pb, Closeable{
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-
+ 
 	
 	// singleton적용
 	private PhonebookManager() {
