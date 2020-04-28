@@ -3,8 +3,267 @@
 <head>
 <meta charset="UTF-8">
 <title>캘린더 폼 작성</title>
+<style>
+    
+  nav.frist ul{
+        list-style-type: none; /* disc 모양 없애기*/
+        background-color: #eee8aa;
+        overflow: hidden;
+        border: 1px solid black;
+        width: 100%;
+        
+    }
+ 
+ nav.frist  li {
+        text-decoration: none;
+        color: olivedrab;
+        padding: 16px 0px ;
+        width: 25%;
+        display: block;
+        text-align: center;
+        float: left; /* 줄바꿈 했던 li 를 일렬로 + 좌측정렬*/
+    }
+    li:hover, nav.frist li:hover{
+        background-color: #ece053;
+        color: white;
+    }
+    small span{
+        color: red;
+        font-weight: bold;
+    }
+    nav.number button{
+        display: inline;
+        background-color: #ffffff;
+        color: #8d8d8d;
+        border: 1px solid #8d8d8d;
+        padding: 5px 10px;
+    }
+    ul{
+        list-style-type: none; 
+        overflow: hidden;
+       
+        display: inline-flex;
+        padding: 0;
+    }
+    li{
+        padding: 5px 15px;
+    }
+    table.table2,table.table2 tr ,table.table2 th,table.table2 td{
+        text-align: center;
+        border-collapse: collapse;
+     
+    }
+    table.table2 th{
+        
+        background-color: #eeeeee;
+    }
+   table.table2 > tbody > tr:nth-child(1){
+    border-top: 1px solid black;
+   }
+    table.table2 tr{
+        border-bottom: 1px solid black;
+    }
+    table.table2{
+        width: 100%;
+        min-width: 800px;
+        margin-top: 5px;
+    }
+    th{
+        padding: 5px 10px;
+   
+    }
+    td{
+        text-align: start;
+        padding: 5px 10px;
+    }
+    
+    section >div  p{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    section >div  p span{
+      color: #4a6bff;
+    }
+    table.calender{
+        border: 1px solid #6b6b6b;
+        width: 100%;
+    }
+   
+    table.tablechild{
+        width: 100%;
+    }
+    table.tablechild td{
+    border: 1px solid #6b6b6b;
+    background-color: white;
+    text-align: start;
+    padding: 0px 50px 40px 5px;
+    }
+    table.tablechild th{
+        border: 1px solid #6b6b6b;
+        background-color: #ebebeb;
+    }
+    body > div > section > div:nth-child(2){
+     padding-bottom: 10px;
+ }
+    body > div > section > div:nth-child(2) > div ,
+    body > div > section > div:nth-child(2) > div span
+    {
+        padding: 5px 10px;
+    }
+</style>
 </head>
 <body>
+    <div>
+<nav class="frist">
+    <ul>
+        <li>정책차림표</li>
+        <li>미리보는 지원사업</li>
+        <li>마감입박 지원사업</li>
+        <li>접수중인 지원사원</li>
+    </ul>
+</nav>
+<section>
+    <div id="date">
+<p>&lt; <span>2015-06-17</span> &gt;</p>
+</div>
+<div>
+<table class="calender">
+    <tr>
+        <td colspan="7">
+             <span><input type="radio" name="sel" value="All" checked/>전체</span> 
+             <span><input type="radio" name="sel" value="창업 · 벤쳐"/>창업 · 벤쳐</span> 
+             <span><input type="radio" name="sel" value="소상공인"/>소상공인</span> 
+             <span><input type="radio" name="sel" value="판로 · 수출"/>판로 · 수출</span> 
+             <span><input type="radio" name="sel" value="R&D"/>R&D</span> 
+             <span><input type="radio" name="sel" value="금융  · 세제"/>금융 · 세제</span> 
+             <span><input type="radio" name="sel" value="인력"/>인력</span> 
+          </td>
+          </tr>
+          <tr>
+      <table class="tablechild" style="background-color: #6b6b6b;">
+          <tr>
+              <th>일</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+              <th>토</th>
+           </tr>
+           <tr>
+               <td style="background-color: #eeeeee;"></td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+           </tr>
+           <tr>
+               <td style="background-color: rgb(163, 220, 255);">7</td>
+               <td>8</td>
+               <td>9</td>
+               <td>10</td>
+               <td>11</td>
+               <td>12</td>
+               <td>13</td>
+           <tr>
+               <td>14</td>
+               <td>15</td>
+               <td>16</td>
+               <td>17</td>
+               <td>18</td>
+               <td>19</td>
+               <td>20</td>
+           </tr>
+           <tr>
+               <td>21</td>
+               <td>22</td>
+               <td>23</td>
+               <td>24</td>
+               <td>25</td>
+               <td>26</td>
+               <td>27</td>
+           </tr>
+           <tr>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td style="background-color: #eeeeee;"></td>
+              <td style="background-color: #eeeeee;"></td>
+              <td style="background-color: #eeeeee;"></td>
+              <td style="background-color: #eeeeee;"></td>
+           </tr>
+      </table>
+  </tr>
+  </table>
+</div>
+<small><span>  · 2015년 6월 7일. 전체</span> 검색 결과, <strong>진행중인 사업</strong>은 <span>총 614 건</span>입니다.</small>
+<table class="table2">
+    <tr>
+        <th>번호</th>
+        <th>지원사업명</th>
+        <th>주관부처</th>
+        <th>신청기간</th>
+        <th>조회</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2015년 창조경제 벤처창업대전 정부 포상및 전시회 참가</td>
+        <td>중소기업청</td>
+        <td>2015.06.04 ~ 2015.06.30</td>
+        <td>731</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>2015년 창조경제 벤처창업대전 정부 포상및 전시회 참가</td>
+        <td>중소기업청</td>
+        <td>2015.06.04 ~ 2015.06.30</td>
+        <td>731</td>
+    </tr>
+    <tr>
+        <td>614</td>
+        <td>2015년 창조경제 벤처창업대전 정부 포상및 전시회 참가</td>
+        <td>중소기업청</td>
+        <td>2015.06.04 ~ 2015.06.30</td>
+        <td>731</td>
+    </tr>
+    <tr>
+        <td>614</td>
+        <td>2015년 창조경제 벤처창업대전 정부 포상및 전시회 참가</td>
+        <td>중소기업청</td>
+        <td>2015.06.04 ~ 2015.06.30</td>
+        <td>731</td>
+    </tr>
+</table>
+<nav style="display: inline-block; width: 100%; text-align: center;" class="number">
+    <button>&lt;&lt;</button>
+    <button>&lt;</button>
+    <ul >
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button>&gt;</button>
+    <button>&gt;&gt;</button>
+</nav>
+</section>
+<footer>
+    <div style="background-color: #eee8aa;   height: 30px;
+    padding: 10px; text-align: center;">
+        <select name="choise" style=" height: 20px;
+       ">
+            <option value="키워드">키워드</option>
+            <option value="키워드">키워드1</option>
+            <option value="키워드">키워드2</option>
+        </select>
+        <input type="text" size="50"/> <button style="background-color: #3282fa; color: white;     padding: 0px 25px;     border: none;">검색</button>
+    </div>
+</footer>
+</div>
 
 </body>
 </html>

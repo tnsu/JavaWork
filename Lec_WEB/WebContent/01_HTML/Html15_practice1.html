@@ -7,11 +7,11 @@
     p{
         margin-top: 20px;
         margin-bottom: 10px;
+        font-weight: bold;
     }
     div{
         display: inline-block;
-        padding: 10px;
-        padding-right: 50px
+
     }
     dl{
         list-style-type: none;
@@ -21,32 +21,67 @@
     }
 dt{
    float: left;
+   font-weight: bold;
+   
 
 }
 dd{
     margin-inline-start: 110px;
+    font-size: 13px;
+    margin-top: 2px;
 }
 div.table1{
-    background-color: rgb(221, 221, 221);
+    background-color: #eeeeee;
     border-top:2px solid black ;
     border-bottom: 1px solid rgb(116, 116, 116);
     border-left:1px solid rgb(116, 116, 116); 
     border-right:1px solid rgb(116, 116, 116); 
 
 }
+div.table2{
+    padding: 10px; 
+     padding-right: 50px;
+}
 small{
     font-size: 10px;
     float: left;
 }
 th{
-    width: 100px;
+    width: 120px;
+    text-align: left;
+    padding-left: 10px;
+}
+table{
+    border-collapse: collapse;
+}
+select{
+    height: 25px;
+}
+td  {
+font-size: 13px;
+}
+tr{
+    height: 30px;
+}
+ table > tbody > tr:nth-child(2)>th.pad,  div > table > tbody > tr:nth-child(3) > th.pad{
+        padding-top: 10px;
+}
+table > tbody > tr:nth-child(2)>td.pad,  div > table > tbody > tr:nth-child(3) > td.pad{
+        padding-top: 10px;
+}
+.border{
+    border-bottom: 1px solid black; 
+}
+tr.trcolor{
+    height: 50px; background-color: #dfdfdf;
 }
 </style>
 </head>
 <body>
+    <form action="">
 <div>
     <p>주문자 정보 입력</p>
-    <div class="table1">
+    <div class="table1 table2">
     <dl>
         <dt>주문자 정보</dt>
         <dd>비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다. <button>휴대폰 인증</button> <button>아이핀 인증</button></dd>
@@ -78,14 +113,14 @@ th{
 <div>
 <p>배송지 정보 입력</p>
     <div class="table1">
-    <table style="border: 1px solid black; width: 1000px; ">
-        <tr>
+    <table style=" min-width: 1000px; margin-bottom: 40px;">
+        <tr class="trcolor border">
             <th>배송지선택</th>
             <td><button>주문자 정보와 동일</button></td>
         </tr>
         <tr>
-            <th>받으시는 분</th>
-            <td><input type="text" name="add1" size="10" disabled> </td>
+            <th class="pad">받으시는 분</th>
+            <td class="pad"><input type="text" name="add1" size="10" disabled> </td>
         </tr>
         <tr>
             <th rowspan="3">주소</th>
@@ -110,13 +145,67 @@ th{
         </tr>
         <tr>
             <th>배송시요구사항</th>
-            <td><input type="text" name="add2"  size="100" > (0자/50자)
-                <small>*SK플레닛(주) 통신판매중개자로서 통신반매의 당사자 아니면, 개발판마자의 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 잭입을 지지 않습니다.</small></td>
+            <td><input type="text" name="add2"  size="100" > (0자/50자) <br>
+                <small style="color: blue;     float: none;">*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</small></td>
             
         </tr>
      </table>
 </div>
 
 </div>
+<div>
+    <p><strong> 결제 정보 입력</strong></p>
+        <div class="table1">
+        <table style=" min-width: 1000px; margin-bottom: 40px;">
+            <tr class="trcolor">
+                    <th>신용카드</th>
+                    <td>
+                        <input type="radio" name="Payment" value="cardregular" checked>신용카드(일반)
+                        <input type="radio" name="Payment" value="cardcorporate">신용카드(법인)
+                        <input type="radio" name="Payment" value="cardOverseas ">해외발급카드
+                     </td>
+                </tr>
+                <tr class="border trcolor">
+                    <th>현금결제</th>
+                    <td>
+                        <input type="radio" name="Payment" value="freepass">무통장입급
+                        <input type="radio" name="Payment" value="realtime">실시간계좌이체
+                        
+                     </td>
+                    </tr>
+            <tr>
+                <th class="pad">카드선택</th>
+                <td class="pad"><select name="cardchoice" >
+                    <option value="" >선택하세요</option>
+                    <option value="신한">신한</option>
+                    <option value="국민">국민</option>
+                    <option value="우리">우리</option>
+                    <option value="씨티">씨티</option>
+                </select> 
+               </td>
+            </tr>
+            <tr>
+                <th>카드선택</th>
+                <td><select name="cardchoice" >
+                    <option value="일시불" >일시불</option>
+                    <option value="2개월">2개월</option>
+                    <option value="3개월">3개월</option>
+                    <option value="4개월">4개월</option>
+                    <option value="5개월">5개월</option>
+                    <option value="6개월">6개월</option>
+                </select> 
+               </td>
+            </tr>
+            <tr>
+                <th>결제안내</th>
+                <td><button style="color: red; border: 1px solid red;">간편결제안내</button> <button>공인인증안내 </button> <button>안전결제안내 </button>
+                    <button>안심클릭안내</button> 
+                    <button>해외발급안내</button></td>
+                
+            </tr>
+         </table>
+    </div>
+    </div>
+</form>
 </body>
 </html>
