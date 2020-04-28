@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주문 폼 작성</title>
+<style>
+    p{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    div{
+        display: inline-block;
+        padding: 10px;
+        padding-right: 50px
+    }
+    dl{
+        list-style-type: none;
+        display: block;
+        margin-block-start: 5px;
+        margin-block-end: 5px;
+    }
+dt{
+   float: left;
+
+}
+dd{
+    margin-inline-start: 110px;
+}
+div.table1{
+    background-color: rgb(221, 221, 221);
+    border-top:2px solid black ;
+    border-bottom: 1px solid rgb(116, 116, 116);
+    border-left:1px solid rgb(116, 116, 116); 
+    border-right:1px solid rgb(116, 116, 116); 
+
+}
+small{
+    font-size: 10px;
+    float: left;
+}
+th{
+    width: 100px;
+}
+</style>
+</head>
+<body>
+<div>
+    <p>주문자 정보 입력</p>
+    <div class="table1">
+    <dl>
+        <dt>주문자 정보</dt>
+        <dd>비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다. <button>휴대폰 인증</button> <button>아이핀 인증</button></dd>
+        <dt>주소</dt>
+        <dd><input type="text" name="add1" size="10" disabled> <button>주소찾기</button></dd>
+        <dd> <input type="text" name="add2"  size="100"disabled></dd>
+        <dd > <input type="text" name="add3"  size="100"></dd>
+        <dt>휴대전화</dt>
+        <dd><select name="phone">
+            <option value="010">010</option>
+            <option value="011">011</option>
+            <option value="019">019</option>
+            <option value="018">018</option>
+            <option value="017">017</option>
+        </select> - 
+            <input type="tel" name="num2" size="10"> - <input type="text" name="num2" size="10"> <input type="checkbox" name="SMS" value="agree" checked>SMS수신동의</dd>
+            <dt>이메일</dt>
+            <dd><input type="text" name="email" size="20" > @ <input type="text" name="email.com" size="20" > <select name="mail">
+                <option value="직접입략">직접입력</option>
+                <option value="naver.com">naver.com</option>
+                <option value="gamil.com">gmail.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="daum.net">daum.net</option>
+            </select></dd>
+    </dl>
+</div>
+<small>*SK플레닛(주) 통신판매중개자로서 통신반매의 당사자 아니면, 개발판마자의 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 잭입을 지지 않습니다.</small>
+</div>
+<div>
+<p>배송지 정보 입력</p>
+    <div class="table1">
+    <table style="border: 1px solid black; width: 1000px; ">
+        <tr>
+            <th>배송지선택</th>
+            <td><button>주문자 정보와 동일</button></td>
+        </tr>
+        <tr>
+            <th>받으시는 분</th>
+            <td><input type="text" name="add1" size="10" disabled> </td>
+        </tr>
+        <tr>
+            <th rowspan="3">주소</th>
+            <td><input type="text" name="add1" size="10" disabled> <button>주소찾기</button> <input type="checkbox" name="recive" value="agree2">배송지 목록에 추가</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="add2"  size="100"disabled></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="add2"  size="100"></td>
+        </tr>
+        <tr>
+            <th>휴대전화</th>
+            <td><select name="phone">
+                <option value="010">010</option>
+                <option value="011">011</option>
+                <option value="019">019</option>
+                <option value="018">018</option>
+                <option value="017">017</option>
+            </select> - 
+                <input type="tel" name="num2" size="10"> - <input type="text" name="num2" size="10"> <input type="checkbox" name="savenum" value="use" checked>안심번호 사용(무료)  <input type="checkbox" name="homenum" value="addnum" >집전화 추가 입력</td>
+        </tr>
+        <tr>
+            <th>배송시요구사항</th>
+            <td><input type="text" name="add2"  size="100" > (0자/50자)
+                <small>*SK플레닛(주) 통신판매중개자로서 통신반매의 당사자 아니면, 개발판마자의 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 잭입을 지지 않습니다.</small></td>
+            
+        </tr>
+     </table>
+</div>
+
+</div>
+</body>
+</html>

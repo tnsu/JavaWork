@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form3</title>
+</head>
+<body>
+<h3>여러가지 Input Type</h3>
+<form action="https://www.w3schools.com/action_page.php">
+
+<!-- hidden -->
+<input type="hidden" name="data1" value="alpha"/>
+<input type="hidden" name="data2" value="bata"/>
+
+<!-- text -->
+First name:<br>
+<input type="text" name="firstname"/>ㅣ
+<br>
+Last name:<br>
+<input type="text" name="lastname"/>ㅣ
+
+
+<br><hr>
+
+<!-- 필수요소인 경우 required ,placeholder : 입력 힌트 -->
+Id :<br>
+<input type="text" name="id" placeholder="아이디 입력" required/>
+<br><hr>
+
+<!-- disabled : 편잡자체가 안됨 드래그도 안됨 가용상태아님, readonly : 드래그는 되지만 편집 안됨 -->
+별명 : <br>
+<input type="text" name="nick" placeholder="건드리면 안되는 값" disabled/><br>
+취미 : <br>
+<input type="text" name="habby" value="읽기 전용"readonly/>
+<br><hr>
+
+<!-- number -->
+나이 : <br>
+<input type="number" name="age"/>
+<!-- 브라우저 마다 구현 다름, 크롬에서는 spin 등장, -->
+<br><hr>
+
+<!--  password -->
+User password : <br>
+<input type="password" name="psw"/>
+<br><hr>
+
+
+<!-- radio -->
+<!-- radio -->
+<input type="radio" name="gender" value="male"/>남성<br>
+<input type="radio" name="gender" value="female"checked />여성<br>
+<input type="radio" name="gender" value="pet"/>동물<br>
+<br><hr>
+
+
+<!-- checkbox -->
+<input type="checkbox" name="vehicle1" value="bike" checked>자전거<br>
+<input type="checkbox" name="vehicle2" value="car">자동차<br>
+
+<br><hr>
+
+
+<!-- button -->
+<!--  <button> 도 있고 <input type="button" 도 있다 -->
+    <input type="submit" value="input type submit (o)"/>
+    <input type="button" value="input type butto)"/>
+    <button>제출(o)</button> <!-- type 이 명시되지 않을때 submit 으로 동작함-->
+<button type="button">type="button"</button>
+<br><hr>
+
+<!-- reset -->
+<input type="reset" value="초기화">
+<!-- submit -->
+
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
