@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>container사용</title>
+<!-- div 컨테이너로 감싼뒤의 모습 -->
+<!-- 화면 좁혀가면서 변화 주목, 화면을 좁혀도 변화없다 -->
+
+<style type="text/css">
+	body {
+		background-color: antiquewhite;
+	}
+	div.a {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		font-size: 18px;	
+	}
+	#div1 {
+		background-color: red;
+		float:left         /* div1 에 float:left 적용 */
+	}
+	#div2 {
+		background-color: green;
+		float:left         /* div2 에 float:left 적용 */
+	}
+	#div3 {
+		background-color: blue;
+		float:left         /* div3 에 float:left 적용 */
+	}
+</style>
+</head>
+<body>
+
+	<!-- div로 감싸기 감싸면 폭을 줄였다 해도 div1,2,3 들이 움직이지 않는다. (밑으로 내려가지 않음) 존재는 하나 height가 0이다 그래서 색이 보이지 않음  폭이 같거나 작으면 div 1,2,3 이 내려간다 border 도 포함되어 있기 때문에 딱 맞게 하고 싶으면 border, padding, margin 값도 계산해 야헌더, -->
+	<div style="width: 400px; background-color: aquamarine;">
+		<div id="div1" class="a">RED div1</div>
+		<div id="div2" class="a">GREEN div2</div>
+		<div id="div3" class="a">BLUE div3</div>
+	</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
