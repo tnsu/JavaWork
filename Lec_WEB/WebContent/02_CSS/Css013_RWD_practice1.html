@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+	box-sizing: border-box;  
+    }
+        [class*="col-"]{
+	float: left;
+    padding: 15px;
+    width: 100%;
+    border: 5px solid white;
+    }
+    .a{display: none;}
+    .e, .f, .g{width: 33.33%;}
+    .a{ background-color: #bf93e7;}
+    .b{ background-color: blueviolet;}
+    .c{ background-color: cyan;}
+    .d{
+        background-color: white;
+        border: 1px solid black;}
+    .e{background-color: beige;}
+    .f{ background-color: lightseagreen;}
+    .g{background-color: lightsalmon;}
+    .h{background-color: #ffcd71;}
+
+    h1::after{ content: ": 12";}
+    .e h1::after, .f h1::after, .g  h1::after{content: ": 4";}
+/*  600px 이상 :tablet */
+@media screen and (min-width: 600px){
+    div{height: 150px;}
+    .a{display: block;}
+    .c, .d{ height: 300px; }
+    /* tablet */
+    .col-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+   
+    .col-m-2  h1::after{ content: ": 2";}
+    .col-m-3  h1::after{ content: ": 3";}
+    .col-m-8  h1::after{ content: ": 8";}
+    .col-m-9 h1::after{ content: ": 9";}
+    .col-m-10 h1::after{ content: ": 10";}
+    
+}
+/* 768px 이상 : pc */
+@media screen and (min-width: 768px){
+    .c, .d{
+        height: 450px;
+    }
+    .col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+.col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.col-4 h1::after{ content: " : 4 ";}
+.col-6 h1::after{ content: " : 6 ";}
+.col-8 h1::after{ content: " : 8 ";}
+.col-12 h1::after{ content: " : 12 ";}
+}
+
+    </style>
+</head>
+<body>
+    <div class="a col-m-2 col-4"><div><h1>A</h1></div></div>
+    <div class="b col-m-10 col-8"><div><h1>B</h1></div></div>
+    <div class="c col-m-2 "><h1>C</h1></div>
+    <div class="d col-m-8 col-6"><h1>D</h1></div>
+    <div class="e col-m-2 col-4"><h1>E</h1></div>
+    <div class="f col-m-2 col-4"><h1>F</h1></div>
+    <div class="g col-m-3 col-4"><h1>G</h1></div>
+    <div class="h col-m-9 col-12"><h1>H</h1></div>
+</body>
+</html>

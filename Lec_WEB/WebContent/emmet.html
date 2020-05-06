@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ul#nav>(li{Hello world}>span.info)+(li>span.info)+li*2
+    -->
+    <!-- ul#nav>(li*2>span.info)+li*2 -->
+    <ul id="nav">
+        <li>Hello world<span class="info"></span></li>
+        <li><span class="info"></span></li>
+        <li></li>
+        <li></li>
+    </ul>
+<!-- select>option*4 -->
+<select name="" id="">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+</select>
+
+<!-- (div>dl>(dt+dd)*3)+footer>p -->
+<div>
+    <dl>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+    </dl>
+</div>
+<footer>
+    <p></p>
+</footer>
+
+
+
+<!--  -->
+<td colspan="2" rowspan="3"></td>
+
+<!-- p>{click}+a{here}+{to continue} -->
+    <p>
+        click
+        <a href="">here</a>
+        to continue
+    </p>
+    <!-- p{click}+a{here}+{to continue} -->
+    <p>click</p>
+    <a href="">here</a>to continue
+
+<!-- 기본적으로는 div 생기고 ul>.rent*3 이렇게 써야 잘나옴 -->
+<ul>
+    <li class="ient"></li>
+    <li class="ient"></li>
+    <li class="ient"></li>
+</ul>
+
+
+
+
+
+
+</body>
+</html>
