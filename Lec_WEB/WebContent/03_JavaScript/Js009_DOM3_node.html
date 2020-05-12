@@ -19,13 +19,13 @@ node type (종류) 와    nodeType 값
 	** 명심! Element node 가 text 를 갖고 있는 것이 아니다!!! 
 
 JS 로 DOM 의 node 간 navigate 할수 있다.
-- parentNode
+- parentNode : 특정노드의 부모 
 - childNodes[nodenumber]
-- firstChild
+- firstChild 
 - lastChild
-- nextSibling
-- previousSibling
-- attributes
+- nextSibling : 다음 형제
+- previousSibling : 
+- attributes : 특정 속성만 꺼내기
 
  -->
 <body>
@@ -36,25 +36,36 @@ JS 로 DOM 의 node 간 navigate 할수 있다.
 
 <script>
 
-// TODO
+ document.getElementById('id02').innerHTML = 
+		 // document.getElementById('id01').innerHTML;
+	/* 	document.getElementById('id01').firstChild // 까지가 노드
+		.nodeValue; */
+		document.getElementById('id01').childNodes[0].nodeValue; 
+	//	childNodes[0] 와 firstChild 같은의미 
+
+// nodeValue 는
+// 	- Element node 의 nodeValue 는 undefined
+//  - Text node 의 nodeValue 는 text값
+//  - Attribute node 의 noveValue 는 attribute value
+
 
 </script>
 
 
 <br><hr>
 <h2>document.body</h2>
-<p onclick="TODO">클랙하면 body 의 컨텐츠가!</p>
+<p onclick="alert(document.body.innerHTML)">클릭하면 body 의 컨텐츠가!</p>
 
 
 <br><hr>
 <h2>document.documentElement</h2>
-<p onclick="TODO">클릭하면 document 의 컨텐츠가!</p>
+<p onclick="alert(document.documentElement.innerHTML)">클릭하면 document 의 컨텐츠가!</p>
 
 <br><hr>
 <h2>nodeType</h2>
 <p id="id03"></p>
 <script>
-// TODO
+document.getElementById('id03').innerHTML = document.getElementById('id01').nodeType; // 1 : element Type
 
 
 
@@ -71,9 +82,12 @@ JS 로 DOM 의 node 간 navigate 할수 있다.
 <!-- body elment node 의 child 들의 nodeName, nodeType, nodeValue  -->
 <p id="id04"></p>
 <script>
-
-// TODO
-
+var body =  document.body.childNodes;  // body 밑의 모든 노드들
+var text = "";
+for ( i = 0; i < body.length; i++) {
+	text += body[i].nodeName + " | " + body[i].nodeType + " | " + body[i].nodeValue + "<br>"
+}
+  document.getElementById('id04').innerHTML = text;
 </script>
 
 <br><hr>
@@ -88,8 +102,12 @@ JS 로 DOM 의 node 간 navigate 할수 있다.
 <p id="id05"></p>
 <script>
 
-// TODO
-
+var c = document.getElementById('img01').attributes;
+var txt = "";
+for ( i = 0; i < c.length; i++) {
+	txt += c[i].nodeName + " | " + c[i].nodeType + " | " + c[i].nodeValue + "<br>"
+}
+document.getElementById('id05').innerHTML = txt;
 </script>
 
 

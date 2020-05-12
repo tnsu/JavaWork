@@ -10,7 +10,7 @@ window.location object
 브라우저의 현재 URL 정보를 다루거나,
 다른 페이지로 이동할때 사용함  ( 새로운 request 발생 ! )
 
-location.href  : 현 페이지의 href (URL) 값 리턴함.★★★
+location.href  : 현 페이지의 href (URL) 값 리턴함.★★★ 함수 아니다 () 아니고 = 이다. 인터넷익스플로로에서만 () 돌아간다. location.href= 'https://www.daum.net'
 location.hostname : 호스트 이름       ex) www.naver.com
 location.pathname :  현 페이지의 경로   (프로토콜 제외)
 location.protocol :  웹 프로토콜 리턴  (http: or https:)
@@ -29,11 +29,11 @@ location.reload() : 새로고침
 
 
 <p id="demo"></p>
-<button type="button" onclick="TODO">assign()</button>
+<button type="button" onclick="location.assign('https://www.naver.com')">assign()</button>
 <br><br>
-<button type="button" onclick="TODO"> location.href = </button>
+<button type="button" onclick="location.href= 'https://www.daum.net'"> location.href = </button>
 <br><br>
-<button type="button" onclick="TODO"> reload() </button>
+<button type="button" onclick="location.reload()"> reload() </button>
 <br>
 
 

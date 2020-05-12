@@ -6,35 +6,37 @@
 </head>
 <style>
 ul, li {padding: 5px;margin: 3px;}
-ul{background-color: pink;}
-li{background-color: cyan;}
+ul{background-color: olivedrab;}
+li{background-color: lightseagreen;}
 </style>
 <!-- 
 element.addEventListener("이벤트", 함수, useCapture)
 
 https://javascript.info/bubbling-and-capturing
+버블링 방식
 
-
-window.event 객세 사용
+window.event 객체 사용
 	event.stopPropagation();
 
 
 -->
 <body>
 <ul>
-  <li onclick="/*TODO*/">Coffee</li>
-  <li onclick="/*TODO*/">Tea
+  <li onclick="show(this)">Coffee</li>
+  <li onclick="show(this)">Tea
     <ul>
-      <li onclick="/*TODO*/">Black tea</li>
-      <li onclick="/*TODO*/">Green tea</li>
+      <li onclick="event.stopPropagation();show(this)">Black tea</li>
+      <li onclick="show(this)">Green tea</li>
     </ul>
   </li>
   <li>Milk</li>
 </ul>
 
 <script>
-
-// TODO
+function show(e){
+  // text만 보이기
+  alert(e.childNodes[0].nodeValue);
+}
 
 </script>
 
@@ -51,8 +53,13 @@ window.event 객세 사용
 </ul>
 
 <script>
+// 위 <li> 클릭하면 show(this) 가 작동되도록 이벤트 추가하기
 
-// TODO
+  var ul1 = document.querySelectorAll('ul#ad li');
+  for ( i = 0; i < ul1.length; i++) {
+  //  ul1[i].addEventListener('click', function(){show(this);}); //bubbling 방식
+   ul1[i].addEventListener('click', function(){show(this);}, true); // capturing 방식
+  }
 
 </script>
 

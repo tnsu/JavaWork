@@ -1,0 +1,121 @@
+<!-- by 조현주 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /*기본값*/
+ * {box-sizing: border-box; }
+
+[class *= "col-"]{ 
+float: left;
+padding: 15px;
+border: 2px solid white;
+text-align: center;
+margin: 5px 0 5px 0;
+font-size: 20px;
+}
+
+/*Mobile*/
+@media screen and (max-width: 600px){
+    .col-m-4 {width: 33.33%;}
+    .col-m-12{width: 100%;}
+    div#A{display: none;}
+    div#B::after{content: ": 12";}
+    div#C::after{content: ": 12";}
+    div#D::after{content: ": 12";}
+    div#D{height: 200px; border: 2px solid gray;}
+    div#E::after{content: ": 4";}
+    div#F::after{content: ": 4";}
+    div#G::after{content: ": 4";}
+    div#H::after{content: ": 12";}
+    
+}
+    
+.clear{clear: both;}
+
+/*Tablet*/
+@media screen and (min-width: 600px){
+.col-t-1{width: 8.33%;} /*12등분 중의 1칸의 폭*/
+.col-t-2{width: 16.66%;} /*12등분 중의 2칸의 폭*/
+.col-t-3 {width: 25%;}
+.col-t-4 {width: 33.33%;}
+.col-t-5 {width: 41.66%;}
+.col-t-6 {width: 50%;}
+.col-t-7 {width: 58.33%;}
+.col-t-8 {width: 66.66%;}
+.col-t-9 {width: 75%;}
+.col-t-10 {width: 83.33%;}
+.col-t-11 {width: 91.66%;}
+.col-t-12{width: 100%;} /*12칸의 폭*/
+div#A::after{content: ": 2";}
+div#B::after{content: ": 10";}
+div#C::after{content: ": 2";}
+div#D::after{content: ": 8";}
+div#E::after{content: ": 2";}
+div#F::after{content: ": 2";}
+div#G::after{content: ": 3";}
+div#H::after{content: ": 9";}
+div#C {height: 180px;}
+div#D {height: 180px; border: 2px solid gray;}
+div#E {height: 90px; margin: 5px 0 0 0;}
+div#F {height: 90px; margin: 0 0 0 0;}
+}
+
+
+/*PC*/
+@media screen and (min-width: 768px){
+.col-1{width: 8.33%;} /*12등분 중의 1칸의 폭*/
+.col-2{width: 16.66%;} /*12등분 중의 2칸의 폭*/
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12{width: 100%;} /*12칸의 폭*/
+div#A::after{content: ": 4";}
+div#B::after{content: ": 8";}
+div#C::after{content: ": 2";}
+div#D::after{content: ": 6";}
+div#E::after{content: ": 4";}
+div#F::after{content: ": 4";}
+div#G::after{content: ": 4";}
+div#H::after{content: ": 12";}
+div#C {height: 180px;}
+div#D {height: 180px; border: 2px solid gray;}
+div#E{height: 60px;}
+div#F{height: 60px;}
+div#G{height: 60px; margin: 0 0 0 0;}
+}
+
+    </style>
+    
+</head>
+<body>
+    <!--header-->
+    <div id= A class="col-t-2 col-4" style="background-color: mediumpurple; color:white">A</div>
+    <div id= B class="col-m-12 col-t-10  col-8" style="background-color: rebeccapurple; color:white">B</div>
+
+    <div class="clear"></div>
+
+    <!--article-->
+    <div id= C class="col-m-12 col-t-2 col-2 " style="background-color: cyan; text-align: left;">C</div>
+    <div id= D class="col-m-12 col-t-8 col-6" style="text-align: left;">D</div>
+
+
+    <div id= E class="col-m-4 col-t-2 col-4 " style="background-color: rosybrown; text-align: left;">E</div>
+    <div id= F class="col-m-4 col-t-2 col-4 " style="background-color: seagreen; text-align: left;">F</div>
+    <div id= G class="col-m-4 col-t-3 col-4 " style="background-color: salmon; text-align: left;">G</div>
+
+    <!--footer-->
+    <div id= H class="col-m-12 col-t-9 col-12" style="background-color:sandybrown; text-align: left;">H</div>
+</body>
+</html>

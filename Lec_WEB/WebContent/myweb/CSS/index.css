@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    /* 스크롤 부드럽게 */
+    scroll-behavior: smooth;
+}
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, a, font, img, small,strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td, input  {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: inherit;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+}
+.section{
+    width:100%; 
+    height:100%;
+     position:relative;
+      color:#ffffff; 
+      font-size:24px;
+   z-index: 99;}
+
+a{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+ul, ol{
+    list-style: none;
+}
+header {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+}
+.mainline{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 5px;
+    background-color: #6BBAC9;
+    z-index: 100;
+}
+.logo{
+    width: 100px;
+    margin: 0 auto;
+}
+.logo a{
+    padding: 20px 0 15px 0;
+}
+.logo img{
+    width: 100%;
+}
+.right {
+    float: right;
+}
+.nav{
+position: fixed;
+top: 110px;
+width: 100%;
+z-index: 99;  
+}
+.navdiv{
+    width: 1300px;
+    margin: 0 auto;
+}
+.navul{
+    text-align: center;
+}
+.navdiv li{
+  display: inline-block;
+  color: #767676;
+  font-size: 14px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.navdiv li a{
+   padding: 0 15px 5px;
+   min-width: 90px;
+   margin: 0 25px;
+}
+.show{
+    display: none;
+}
+li:hover .show{
+    display: block;
+    color: #6BBAC9;
+}
+li:hover .showno{
+    display:none;
+}
+li.findStore a:hover{
+    border-bottom: 1px solid #6BBAC9;
+}
+ul.langul li a img{
+    width:25px ;
+}
+ul.langul li a img, ul.langul li a p{
+    float: left;
+}
+header div.right{
+    color: #b2b2b2;
+    margin-top: 10px;
+}
+#langA{
+    margin-top: 8px;
+    float: right;
+}
+.headerWrap{
+    position: relative;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+.login li{
+    float: left;
+    padding: 0 15px;
+}
+ .login li:last-child{
+    float: left;
+    border-left: 1px solid #ccc;
+} 
+.top{
+position: fixed;
+color: #f0f0f0;
+background: #6BBAC9;
+bottom: 20px;
+right: 20px;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+opacity: 0.9;
+font-size: 12px;
+}
+.top:hover{
+color: white;
+background: #60b9ca;
+}
+
+#pagemenu{
+position: fixed;
+top: 50%;
+z-index: 100;
+right: 17px;
+}
+#pagemenu ul li{
+position: relative;
+display: block;
+width: 5px;
+height: 30px;
+margin: 12px;
+cursor: default;
+
+}
+#pagemenu ul li a{
+display: block;
+position: relative;
+
+}
+#pagemenu ul li a span {
+position: absolute;
+z-index: 1;
+height: 42px;
+width: 1px;
+background: #6BBAC9;
+opacity: 0.8;
+box-sizing: border-box;
+}
+#pagemenu a.active span,
+#pagemenu li:hover a:hover span{
+width: 3px;
+margin: 0px 0 0 -0.5px;
+opacity: 1;
+}
+#pagemenu a:hover span{
+background: #64aebd;
+}
+#pagemenu li:hover div.pagename{
+opacity: 1;
+transition: opacity 0.2s ease-in;
+color: #333;
+width: auto;
+}
+#pagemenu li div.pagename{
+position: absolute;
+right: 17px;
+font-size: 14px;
+font-family: arial, helvetica, sans-serif;
+display: block;
+max-width: 220px;
+width: 0;
+white-space: nowrap;
+opacity: 0;
+}

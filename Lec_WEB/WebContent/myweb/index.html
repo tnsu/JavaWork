@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery/index.js" ></script>
+    <title>stonehenge</title>
+    <style>
+        
+        body{
+           
+
+            /* 스크롤창 없애기 */
+            overflow-y: hidden; overflow-x: hidden;
+        }
+        .subMenu{
+            position: fixed;
+            top: 146px;
+            left: 0;
+            right: 0;
+            z-index: 201;
+            width: 100%;
+            background: #fafafa;
+        }
+        .subAll{
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 45px;
+            box-sizing: border-box;
+        }
+        .subMenuBar{
+        overflow: hidden;
+        vertical-align: top;
+        padding: 20px 0 30px;
+
+        }
+        #full{
+            height: 100%;
+    position: relative;
+    touch-action: none;
+   /*  transform: translate3d(0px, -3763px, 0px);
+    transition: all 700ms ease 0s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainline"></div>
+    <header>
+        <div class="headerWrap">
+        <div class="right">
+               <ul class="login">
+                   <li><a class="searchBar">SEARCH</a></li>
+                   <li><a href="">LOG-IN</a></li>
+               </ul>
+            </div>
+        <div class="logo">
+       <a href="index.html"><img src="https://stonehenge.co.kr/img/logo3-r.png">
+        <img src="https://stonehenge.co.kr/img/logo3-r.png" style="display: none;"></a>
+        </div>
+    </div>
+    <nav class="nav">
+        <div class="navdiv">
+            <ul class="navul">
+                <li><a class="showno" href="">BRAND</a><a class="show" href="" >브랜드</a></li>
+                <li><a class="showno" href="">COLLECTION</a><a class="show" href="" >컬렉션</a></li>
+                <li><a class="showno" href="">ITEM</a><a class="show" href="" >아이템</a></li>
+                <li><a class="showno" href="">ISSUE</a><a class="show" href="" >이슈</a></li>
+                <li class="findStore"><a class="showno" href="">STORE</a><a class="show" href="" >매장찾기</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <!-- 서브메뉴 -->
+    <div class="subMenu" style="display: block; opacity: 1;" >
+        <div class="subAll">
+        <div class="subMenuBar" style="display: block; opacity: 1;">
+        
+        </div>
+    </div>
+    </div>
+    <div id="pagemenu" style="
+    margin-top: -160px;background-color: #ffffff00;">
+        <ul>
+            <li><a href="#mainPage"><span></span></a>
+            <div class="pagename">Main</div></li>
+            <li><a href="#secondPage"><span></span></a>
+            <div class="pagename">Love In The Air</div></li>
+            <li><a href="#3rdPage"><span></span></a>
+                <div class="pagename">MOMENT OF LIGHT</div></li>
+            <li><a href="" class="active"><span></span></a>
+                <div class="pagename">Beautiful Moments</div></li>
+            <li><a href=""><span></span></a>
+                <div class="pagename">Brand Story</div></li>
+            <li><a href=""><span></span></a>
+                <div class="pagename">Watch Collection</div></li>
+            <li><a href=""><span></span></a>
+                <div class="pagename">서비스 제공</div></li>
+            <li><a href=""><span></span></a>
+                <div class="pagename">구독하기</div></li>
+        </ul>
+    </div>
+    <div id="full">
+    <div class="section" id="mainPage" >1</div>
+    <div class="section" id="secondPage" style="background-color: blueviolet;">2</div>
+    <div class="section" id="3rdPage">3</div>
+</div>
+    <footer></footer>
+    <a class="top" href="#">TOP</a>
+
+</body>
+
+</html>

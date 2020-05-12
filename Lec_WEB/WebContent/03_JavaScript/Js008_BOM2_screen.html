@@ -35,20 +35,24 @@ window.outerWidth 와 window.outerHeight   브라우저 창 전체 크기
 <script>
 function showScreen(){
 	document.getElementById("demo").innerHTML = 
-	"Screen width & height : " + screen.width + " x " + screen.height + "<br>" +
-	"availWidth & arailHeight : " + screen.availWidth + " x " + screen.availHeight + "<br>" +
-	"Screen Color Deptn : " + screen.colorDepth + "<br>" +
+	"Screen width & height(전체크기) : " + screen.width + " x " + screen.height + "<br>" +
+	"availWidth & arailHeight(실제로 os가 차지하고있는거 빼고계산) : " + screen.availWidth + " x " + screen.availHeight + "<br>" +
+	"Screen Color Deptn (bit): " + screen.colorDepth + "<br>" +
 	"Screen Pixel Depth: " + screen.pixelDepth + "<br>" +
-	"window.innerWidth x innerHeight: " + window.innerWidth + " x " + window.innerHeight + "<br>" + 
-	"window.outerWidth x outerHeight: " + window.outerWidth + " x " + window.outerHeight + "<br>"
+	"window.innerWidth x innerHeight(브라우저안의 크기): " + window.innerWidth + " x " + window.innerHeight + "<br>" + 
+	"window.outerWidth x outerHeight (브라우저의 전체적인크기): " + window.outerWidth + " x " + window.outerHeight + "<br>"
 	;
 }
 
 
 
 </script>
-
+<!-- 
+	onload : 해당 element 의 로딩이 끝나면 호출
+	onresize : element 사이즈 변경될때마다 호출
+ -->
 <body onresize="showScreen()" onload="showScreen()">
+	<!-- 여기서는 바디의 로딩이 다끝나면 호출 -->
 <p id="demo"></p>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
