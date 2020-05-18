@@ -22,8 +22,27 @@
 </div>
 
 <script>
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
 
-// TODO
+// 버튼 클릭하면 팝업 보이게 하기
+btn.onclick = function(){
+  modal.style.display ="block";
+}
+// 팝업의 X 버튼 누르면 닫히게 하기
+span.onclick = function(){
+  modal.style.display ="none";
+}
+// 팝업 바깥화면 클릭시 팝업사라지게 하기(modal) <-> (modeless : 바깥화면 클릭해도 사라지지 않음)
+window.onclick = function(event){
+  //event.target : event 발생한 element 객체
+  if(event.target == modal){
+    modal.style.display = 'none';
+  }
+}
+
+
 
 </script>
 

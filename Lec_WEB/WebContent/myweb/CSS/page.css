@@ -1,0 +1,392 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mySlides {
+    display: none
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    position: absolute;
+    margin: 0;
+}
+.slideshow-container img{
+    height: 100vh;
+}
+
+.sideSlides {
+    position: absolute;
+    bottom: 310px;
+    left: 40%;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 25px;
+    margin-top: -30px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    background: url(https://stonehenge.co.kr/img/arrowBottom.svg) no-repeat;
+    transform: rotate(90deg);
+    opacity: 0.5;
+    margin: 5px 0px 0 0px;
+}
+
+.next {
+    background: url(https://stonehenge.co.kr/img/arrowBottom.svg) no-repeat;
+    transform: rotate(-90deg);
+    opacity: 0.5;
+    margin: 0px 30px 20px 0px;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.sideSlides li {
+
+    display: inline-block;
+    margin: 0 2px;
+    width: 85px;
+}
+
+.sideSlides span {
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    height: 1px;
+    width: 100px;
+    background: #6BBAC9;
+    opacity: 0.8;
+    box-sizing: border-box;
+    transition: background-color 0.6s ease;
+    top: 300px;
+}
+
+span.active2 {
+    height: 4px;
+    margin: -1px 0 0 0px;
+    opacity: 1;
+}
+
+.sideSlides span:hover {
+    height: 4px;
+    margin: -1px 0 0 0px;
+    opacity: 1;
+    background: #64aebd;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* 페이지 공통 */
+.pageW{
+    position: relative;
+    height: 100vh;
+    padding-top: 130px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.pageW a{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 2 */
+.tableW {
+    display: table;
+    width: 100%;
+    vertical-align: middle;
+    height: 100vh;
+}
+.table {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    height: 100vh;
+}
+.table.backimg{
+    background-image: url(../img/20SS_0213_BG_1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.page2box {
+    text-align: center;
+   /*  padding: 130px 10px 10px; */
+    box-sizing: border-box;
+}
+.P2info h1{
+    font-family: 'Lora',serif;
+    line-height: 1.2;
+    font-size: 36px;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+    color: #333;
+}
+.P2p{
+    padding: 20px 0;
+    font-size: 15px;
+    color: #333;
+}
+.P2p a{
+    color: #333;
+    display: block;
+}
+.P2img {
+    display: block;
+    max-width: 200px;
+    margin: 0px auto;
+    max-height: 180px;
+}
+.procuctList{
+    position: relative;
+    margin-top: 40px;
+}
+.ListW{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+}
+.ListUl li{
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 170px;
+    margin-right: 10px;
+}
+.ListUl li a img{
+    max-height: 165px;
+    max-width: 100%;
+    display: block;
+
+}
+.ListUl li a p{
+    color: #787878;
+    font-size: 13px;
+    margin-top: 10px;
+}
+/* 3페이지 */
+.mainImg{
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    width: 55%;
+}
+.mainGo{
+    position: absolute;
+    top: 30%;
+    right: 0%;
+    width: 40%;
+    text-align: center;
+    color: #333;
+}
+.mainImg img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.mainGo h1{
+  font-size: 1.5em;
+ padding: 20px 0;
+ letter-spacing: -3px;
+}
+.mainGo p{
+    font-size: 14px;
+    padding: 20px 0;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+.btn{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.btn:hover, .right2 .btn:hover{
+    color:#6BBAC9;
+    background-color: white;
+    border: 1px solid #6BBAC9;
+}
+/* 3끝 */
+
+/* 4페이지 6페이지 */
+.right2{
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 40%;
+    text-align: center;
+    color: #333;
+}
+.right2 h1{
+    font-size: 1.5em;
+    padding: 20px 0;
+    
+}
+.right2 .btn{
+    color:white;
+    background-color: #6BBAC9;
+    border: 1px solid #6BBAC9;
+    font-weight: bold;
+    display: inline-block;
+}
+h1 .en{
+    display: block;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 100;
+}
+h1 .ko{
+    font-weight: 100;
+    display: none;
+}
+h1:hover .en{
+    display: none;
+}
+h1:hover .ko{
+    display: block;
+}
+.right2 p{
+    font-size: 15px;
+    padding: 20px 0;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+/* 5 */
+.page5 .right2{
+    right: 50%;
+    color: white;
+    font-weight: 400;
+}
+
+/* 7 */
+.page7 > .secttionW{
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    padding: 6% 0;
+}
+.serviceW{
+    position: relative;
+    overflow: hidden;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.servicemain{
+    padding: 12% 10px 10px;
+}
+.servicelist{
+    overflow: hidden;
+    font-size: 0;
+}
+.servicelist li{
+    float: left;
+    width: 50%;
+}
+.servicelist a{
+    display: block;
+    position: relative;
+    float: left;
+}
+.servicelist img{
+    width: 50%;
+    display: inline-block;
+}
+.serName{
+    width: 50%;
+    display: inline-block;
+    padding-bottom: 50%;
+    position: relative;
+    font-size: 1rem;
+    color: #333;
+}
+.serP{
+    width: 100%;
+    position: absolute;
+    top: 47%;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 300;
+}
+.serP::after{
+    width: 30px;
+    height: 3px;
+    content: "";
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: #6BBAC9;
+}
+

@@ -37,8 +37,8 @@ button {
 /*
  Traversing Up: 함수들
 	parent()
-	parents()
-	parentsUntil()
+	parents() : 부모 할아버지 고조ㅡ증조
+	parentsUntil() : 선택해서 기준부터 선택한 태그 전까지 
 	
 Traversing Down: 
 	children()
@@ -58,81 +58,82 @@ $(document).ready(function(){
 
 	// 어떤 버튼이든지 눌리면 selected 클래스 제거
 	$("button").click(function(){
-		// TODO  
+		$("*").removeClass("selected");
 	});
 	
 	//---------------------------------------------
 	// parent()
 	$("#btn11").click(function(){
-		// TODO  
+		$("span").parent().addClass("selected");
 	});
 	
 	// parents()
 	$("#btn12").click(function(){
-		// TODO  
+		$("span").parents().addClass("selected");
 	});
 	
 	// parents("ul")
 	$("#btn13").click(function(){
-		// TODO  
+		$("span").parents("ul").addClass("selected"); 
 	});
 	
 	// parentesUntil()
 	$("#btn14").click(function(){
-		// TODO  
+		// "span" 상위 element 들중 "div" 전까지 선택됨.
+		$("span").parentsUntil("div").addClass("selected"); 
 	});
 	
 	//-----------------------------------------
 	//
 	// children
 	$("#btn21").click(function(){
-		// TODO  
+		$("div").children().addClass("selected"); 
 	});
 	
 	// children("..")
 	$("#btn22").click(function(){
-		// TODO  
+		$("div").children("p").addClass("selected"); 
 	});
 	
 	// find()
 	$("#btn23").click(function(){
-		// TODO  
+		$("div").find("span").addClass("selected");    
 	});
 	
 	// find(*)
 	$("#btn24").click(function(){
-		// TODO  
+		$("div").find("*").addClass("selected");
 	});
 	
 	//-----------------------------------------
 	// siblings()
 	$("#btn31").click(function(){
-		// TODO  
+		$("#sibling h2").siblings().addClass("selected");
 	});
 
 	$("#btn32").click(function(){
-		// TODO  
+		$("#sibling h2").siblings("p").addClass("selected");
 	});
 
 	// next()
 	$("#btn33").click(function(){
-		// TODO  
+		$("#sibling h2").next().addClass("selected");
 	});
 	
 	// nextAll()
 	$("#btn34").click(function(){
-		// TODO  
+		$("#sibling h2").nextAll().addClass("selected");
 	});
 	
 	// nextUntil(..)
 	$("#btn35").click(function(){
-		// TODO  
+		$("#sibling h2").nextUntil("h6").addClass("selected"); 
 	});
 	
 	// TODO.. 나머지는 직접 해보자
 	// prev()
 	$("#btn36").click(function(){
-		// TODO  
+		$("div").prev("p").addClass("selected"); 
 	});
 	
 	// prevAll()

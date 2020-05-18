@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="CSS/event.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery/move.js"></script>
+    <script type="text/javascript" src="jquery/event.js"></script>
+
+    <title>StoneEvent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="no">
+        <header>
+            <div class="in">
+                <h1>
+                    <a href="event.html">
+                        <img src="https://momentoflight.co.kr/web/teaser/BP_logo.png">
+                    </a>
+                </h1>
+            </div>
+        </header>
+    </div>
+    <!-- 사이드바 메뉴 -->
+    <div id="sideBar">
+        <ul>
+            <li><a data-scroll="eventpage1" href="#eventpage1" class="active"><span></span></a></li>
+            <li><a id="p2" data-scroll="eventpage2" href="#eventpage2"><span></span></a></li>
+            <li><a id="p3" data-scroll="eventpage3" href="#eventpage3"><span></span></a></li>
+            <li><a id="p4" data-scroll="eventpage4" href="#eventpage4"><span></span></a></li>
+            <li><a data-scroll="eventpage5"  href="#eventpage5"><span></span></a></li>
+        </ul>
+
+    </div>
+    <div id="full">
+        <div class="section" id="eventpage1">
+            <div class="video">
+                <iframe id="frame"
+                    src="https://player.vimeo.com/video/410789935?background=1&autoplay=1&loop=1&autopause=0&control=0&muted=1&api=1"
+                    frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="warp">
+                <div class="warpPad">
+                    <div class="warpP">
+                        <p class="title"><span>MOMENT OF LIGHT</span>
+                        </p>
+                        <p class="date"><span>2020.05.18. PM 03:00</span></p>
+                        <p class="time"><span id="demo"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="eventpage2"
+            style="background-image: url(https://momentoflight.co.kr/web/teaser/2.about.png);">
+            <div class="wrap">
+                <div class="warpPad">
+                    <div class="warpP" style="opacity: 0;" >
+                       <!--  style="opacity: 0;" -->
+                        <h1>ABOUT</h1>
+                        <p>"MOMENT OF LIGHT"는 글로벌 아티스트로 활동하는 방탄소년단(BTS)과<br>국내 유명 주얼리 브랜드,스톤헨지(SEONEHNgE)의 협업을 동해 탄생한 목걸이
+                            입니다. <br><br> 단순히 몸에 착용하는 하나의 주얼리를 넘어,<br>
+                            심장과 가장 가까이 위치한 목걸이라는 소재를 통해<br>오랜 시간이 흘러도 변하지 않는 본연의 가치와<br>감정의 연결을 더욱 선명하게 전달합니다.
+                            <br><br>다가오는 5월 18일, 방탄소년단과 스톤헨지가 함께<br>'탄생(BIRTH),운명(DESTINY),공존(COEXIST)'을 주제로 <br>아름답게
+                            빛나는 순간에 대한 메세지를 선보입니다.</p>
+                        <p class="btnp"><span class="btn">VIEW MORE</span></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="eventpage3"
+            style="background-image: url(https://momentoflight.co.kr/web/teaser/moment_img.png);  background-repeat: no-repeat; background-size: cover;">
+            <div class="backcolor">
+                <div class="wrap">
+                    <div class="warpPad">
+                        <div class="warpP" style="opacity: 0;">
+                            <h1>MOMENT OF LIGHT</h1>
+                            <p>메인 테마인 'MOMENT OF LIGHT'는 일편적인 순간의 포착과 기념을 넘어,<br>탄생과 운명, 그리고 공존을 통해 이루어진 아름다운 빛의 궤적을
+                                의미합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="eventpage4"
+            style="background-image: url(https://momentoflight.co.kr/web/teaser/concept_img.png);  background-repeat: no-repeat; background-size: cover;">
+            <div class="wrap">
+                <div class="warpPad">
+                    <div class="text">
+                        <div class="textTable">
+                            <h3>BIRTH | 탄생</h3>
+                            <p>빛은 누구에세나 공평하게<br>누구에게나 진심으로 빛나는 것</p>
+                            <p class="btnp"><span class="btn">VIEW MORE</span></p>
+                        </div>
+                        <div class="textTable">
+                            <h3>DESTINY | 운명</h3>
+                            <p>나를 스치는 수많은 빛들 중<br>찬란하게 빝나는 단 하나의 빛</p>
+                            <p class="btnp"><span class="btn">VIEW MORE</span></p>
+                        </div>
+                        <div class="textTable">
+                            <h3>COEXIST | 공존</h3>
+                            <p>서로를 바라보며 영원히 비춰줄<br>너와 나의 공존의 시간</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section footH" id="eventpage5">
+            <div class="wrap">
+                <div class="footwarp">
+                    <div class="col-1">
+                        <h3>BTS | STONHENgE</h3>
+                        <div>
+                            <p>
+                                <span>COMPANY : 실버스톤 유한회사</span>
+                                <span>CEO : 제현호, 강성원</span>
+                                <br>
+                                <span>ADDRESS : 05116 서울특별시 광진구 광나루로56길 85 (구의동) 테크노-마트21 36층 5호
+                                    <span>CEO : 제현호, 강성원</span>
+                                </span><br><span>E-MAIL : info@momentoflight.co.kr</span><br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                         
+                    </div>
+                    <div class="col-3">
+                        <div class="snsbox">
+                            <a href="https://www.facebook.com/Moment-Of-Light-102465911415413" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.youtube.com/channel/UCOLlTxq056JDVp4Z14I0Aqg?view_as=subscriber" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                            <a href="https://twitter.com/MomentOfLight7" target="_blank"><i class="fab fa-twitter "></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("may 18, 2020 15:00:00").getTime(); //may
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var hours = Math.floor(distance / (1000 * 60 * 60 * 24) * 24); /// (1000 * 60 * 60 * 24));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1001);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = hours + " : " +
+                minutes + " : " + seconds;
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "곧 오픈됩니다.";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

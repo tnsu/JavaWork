@@ -1,117 +1,655 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400;1,500&family=Nanum+Gothic:wght@400;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/fixed.css">
+    <link rel="stylesheet" href="CSS/page.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery/index.js" ></script>
+    <script type="text/javascript" src="jquery/index.js"></script>
+    <script type="text/javascript" src="jquery/move.js"></script>
     <title>stonehenge</title>
-    <style>
-        
-        body{
-           
-
-            /* 스크롤창 없애기 */
-            overflow-y: hidden; overflow-x: hidden;
-        }
-        .subMenu{
-            position: fixed;
-            top: 146px;
-            left: 0;
-            right: 0;
-            z-index: 201;
-            width: 100%;
-            background: #fafafa;
-        }
-        .subAll{
-            width: 100%;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 45px;
-            box-sizing: border-box;
-        }
-        .subMenuBar{
-        overflow: hidden;
-        vertical-align: top;
-        padding: 20px 0 30px;
-
-        }
-        #full{
-            height: 100%;
-    position: relative;
-    touch-action: none;
-   /*  transform: translate3d(0px, -3763px, 0px);
-    transition: all 700ms ease 0s; */
-        }
-    </style>
 </head>
 
 <body>
     <div class="mainline"></div>
-    <header>
-        <div class="headerWrap">
-        <div class="right">
-               <ul class="login">
-                   <li><a class="searchBar">SEARCH</a></li>
-                   <li><a href="">LOG-IN</a></li>
-               </ul>
+    <div class="overlay"></div>
+    <div class="no">
+        <header>
+            <div class="headerWrap" id="warp">
+                <div class="right">
+                    <ul class="login">
+                        <li><a class="searchBar">SEARCH</a></li>
+                        <li><a href="login.html">LOG-IN</a></li>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <a href="index.html"><img id="logo1" src="https://stonehenge.co.kr/img/logo3-r.png">
+                        <img  id="logo2" src="https://stonehenge.co.kr/img/logo2.png" style="display: none;"></a>
+                </div>
             </div>
-        <div class="logo">
-       <a href="index.html"><img src="https://stonehenge.co.kr/img/logo3-r.png">
-        <img src="https://stonehenge.co.kr/img/logo3-r.png" style="display: none;"></a>
+            <nav class="nav" id="nav">
+                <div class="navdiv">
+                    <ul class="navul">
+                        <li class="a"><a class="en" href="">BRAND</a><a class="ko" href="">브랜드</a></li>
+                        <li class="b"><a class="en" href="">COLLECTION</a><a class="ko" href="">컬렉션</a></li>
+                        <li class="c"><a class="en" href="">ITEM</a><a class="ko" href="">아이템</a></li>
+                        <li class="d"><a class="en" href="">ISSUE</a><a class="ko" href="">이슈</a></li>
+                        <li class="findStore"><a class="en" href="">STORE</a><a class="ko" href="">매장찾기</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- 팝업 : 다른링크로 넘어감 -->
+        <div class="popupW">
+            <div id="popup" style="display: block;">
+                <!-- 수정 -->
+                <span class="close">&times;</span>
+                <div>
+                    <a href="event.html"><img src="https://stonehenge.co.kr/img/popup/popup_200507.jpg"></a>
+                </div>
+            </div>
+        </div>
+<!-- 서치 클릭시 검색창 -->
+<div class="searchBox" style="display: none;">
+    <div class="searchW">
+        <span class="close2">&times;</span>
+    </div>
+    <div class="searchMain">
+        <input type="text" class="">
+    </div>
+</div>
+
+        <!-- 서브메뉴 -->
+        <div class="subMenu" style="display: none; opacity: 1;">
+            <div class="subAll">
+                <div class="subMenuBar subMenuBar_a" style="display:none; opacity: 1;">
+                    <div class="subUl">
+                        <ul class="ul">
+                            <li><a class="en" href="">BRAND STORY</a><a class="ko" href="">브랜드 스토리</a></li>
+                            <li><a class="en" href="">BEAUTIFUL MOMENTS</a><a class="ko" href="">뷰티풀 모먼츠</a></li>
+                            <li><a class="en" href="">SPECIAL</a><a class="ko" href="">스페셜</a></li>
+                            <li><a class="en" href="">AD CAMPAIGN</a><a class="ko" href="">광고 캠페인</a></li>
+                            <li><a class="en" href="">EDITORIAL</a><a class="ko" href="">화보</a></li>
+                        </ul>
+                    </div>
+                    <div class="subImg">
+                        <span><img src="https://stonehenge.co.kr/img/menu/menu5_200213_01.jpg"></span>
+                    </div>
+                </div>
+                <div class="subMenuBar subMenuBar_b" style="display:none; opacity: 1;">
+                    <div class="subUl1">
+                        <div class="imgM">
+                            <div class="imgWarp">
+                                <ul class="imgUl">
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu1_1.png"> </div>
+                                            <p class="imgName en">SHe</p>
+                                            <p class="imgName ko">쉬 컬렉션</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu1_2.png"></div>
+                                            <p class="imgName en">Silhouette</p>
+                                            <p class="imgName ko">실루엣 컬렉션</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu1_3.png"></div>
+                                            <p class="imgName en">Honeymoon</p>
+                                            <p class="imgName ko">허니문 컬렉션</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu1_5.png"></div>
+                                            <p class="imgName en">Silver Tale</p>
+                                            <p class="imgName ko">실버 테일 컬렉션</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu1_6.png"></div>
+                                            <p class="imgName en">Watch</p>
+                                            <p class="imgName ko">워치 컬렉션</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subMenuBar subMenuBar_c" style="display:none; opacity: 1;">
+                    <div class="subUl1">
+                        <div class="imgM">
+                            <div class="horizonM">
+                                <a>
+                                    <p class="imgName en">All</p>
+                                    <p class="imgName ko">전체상품</p>
+                                </a>
+                                <a>
+                                    <p class="imgName en">New Arrivals</p>
+                                    <p class="imgName ko">신상품</p>
+                                </a>
+                                <a>
+                                    <p class="imgName en">best</p>
+                                    <p class="imgName ko">인기상품</p>
+                                </a>
+                                <a>
+                                    <p class="imgName en">propose</p>
+                                    <p class="imgName ko">프로포즈</p>
+                                </a>
+                            </div>
+                            <div class="imgWarp">
+                                <ul class="imgUl">
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_1.png"> </div>
+                                            <p class="imgName en">Necklace</p>
+                                            <p class="imgName ko">목걸이</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_2.png"></div>
+                                            <p class="imgName en">Earrings</p>
+                                            <p class="imgName ko">귀걸이</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_3.png"></div>
+                                            <p class="imgName en">Couple Ring</p>
+                                            <p class="imgName ko">커플링</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_4.png"></div>
+                                            <p class="imgName en">Ring Tale</p>
+                                            <p class="imgName ko">반지</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_5.png"></div>
+                                            <p class="imgName en">Bracelet</p>
+                                            <p class="imgName ko">팔찌</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_6.png"></div>
+                                            <p class="imgName en">Anklet</p>
+                                            <p class="imgName ko">발찌</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/imgmenu2_7.png"></div>
+                                            <p class="imgName en">Watch</p>
+                                            <p class="imgName ko">시계</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subMenuBar subMenuBar_d" style="display:none; opacity: 1;">
+                    <div class="subUl12">
+                        <div class="issueM">
+                            <div class="imgWarp">
+                                <ul class="imgUl">
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/menu5_200213_02.jpg"> </div>
+                                            <p class="imgName en">STYLE</p>
+                                            <p class="imgName ko">스타일</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/menu5_200213_03.jpg"></div>
+                                            <p class="imgName en">GALLERY</p>
+                                            <p class="imgName ko">갤러리</p>
+                                        </a></li>
+                                    <li><a>
+                                            <div class="imginW">
+                                                <img src="https://stonehenge.co.kr/img/menu/menu5_200213_04.jpg"></div>
+                                            <p class="imgName en">NEWS</p>
+                                            <p class="imgName ko">뉴스</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <nav class="nav">
-        <div class="navdiv">
-            <ul class="navul">
-                <li><a class="showno" href="">BRAND</a><a class="show" href="" >브랜드</a></li>
-                <li><a class="showno" href="">COLLECTION</a><a class="show" href="" >컬렉션</a></li>
-                <li><a class="showno" href="">ITEM</a><a class="show" href="" >아이템</a></li>
-                <li><a class="showno" href="">ISSUE</a><a class="show" href="" >이슈</a></li>
-                <li class="findStore"><a class="showno" href="">STORE</a><a class="show" href="" >매장찾기</a></li>
-            </ul>
-        </div>
-    </nav>
-    </header>
-    <!-- 서브메뉴 -->
-    <div class="subMenu" style="display: block; opacity: 1;" >
-        <div class="subAll">
-        <div class="subMenuBar" style="display: block; opacity: 1;">
-        
-        </div>
-    </div>
-    </div>
+    <!-- 사이드 페이지 이동바 -->
     <div id="pagemenu" style="
-    margin-top: -160px;background-color: #ffffff00;">
+    margin-top: -160px; background-color: #ffffff00;">
         <ul>
-            <li><a href="#mainPage"><span></span></a>
-            <div class="pagename">Main</div></li>
-            <li><a href="#secondPage"><span></span></a>
-            <div class="pagename">Love In The Air</div></li>
-            <li><a href="#3rdPage"><span></span></a>
-                <div class="pagename">MOMENT OF LIGHT</div></li>
-            <li><a href="" class="active"><span></span></a>
-                <div class="pagename">Beautiful Moments</div></li>
-            <li><a href=""><span></span></a>
-                <div class="pagename">Brand Story</div></li>
-            <li><a href=""><span></span></a>
-                <div class="pagename">Watch Collection</div></li>
-            <li><a href=""><span></span></a>
-                <div class="pagename">서비스 제공</div></li>
-            <li><a href=""><span></span></a>
-                <div class="pagename">구독하기</div></li>
+            <li><a data-scroll="mainPage" href="#mainPage"><span></span></a>
+                <div class="pagename">Main</div>
+            </li>
+            <li><a data-scroll="secondPage" href="#secondPage"><span></span></a>
+                <div class="pagename">Love In The Air</div>
+            </li>
+            <li><a data-scroll="3rdPage" href="#3rdPage"><span></span></a>
+                <div class="pagename">MOMENT OF LIGHT</div>
+            </li>
+            <li><a data-scroll="4thPage" href="#4thPage"><span></span></a>
+                <div class="pagename">Beautiful Moments</div>
+            </li>
+            <li><a data-scroll="5thPage" href="#5thPage"><span></span></a>
+                <div class="pagename">Brand Story</div>
+            </li>
+            <li><a data-scroll="6thPage" href="#6thPage"><span></span></a>
+                <div class="pagename">Watch Collection</div>
+            </li>
+            <li><a data-scroll="7thPage" href="#7thPage"><span></span></a>
+                <div class="pagename">서비스 제공</div>
+            </li>
+            <li><a data-scroll="8thPage" href="#8thPage"><span></span></a>
+                <div class="pagename">구독하기</div>
+            </li>
         </ul>
     </div>
+    <!-- 페이지들 1~8 -->
     <div id="full">
-    <div class="section" id="mainPage" >1</div>
-    <div class="section" id="secondPage" style="background-color: blueviolet;">2</div>
-    <div class="section" id="3rdPage">3</div>
-</div>
-    <footer></footer>
-    <a class="top" href="#">TOP</a>
+        <div class="section" id="mainPage">
 
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <img src="https://stonehenge.co.kr/img/stmain/bigslide_200213_01.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://stonehenge.co.kr/img/stmain/bigslide_200213_02.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://stonehenge.co.kr/img/stmain/bigslide_200213_03.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="https://stonehenge.co.kr/img/stmain/bigslide_200213_04.jpg">
+                </div>
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)"></a>
+                <a class="next" onclick="plusSlides(1)"></a>
+            </div>
+
+            <!-- The dots/circles -->
+            <div class="sideSlides">
+                <ul>
+                    <li><span class="dot active2" onclick="currentSlide(1)"></span></li>
+                    <li><span class="dot" onclick="currentSlide(2)"></span></li>
+                    <li><span class="dot" onclick="currentSlide(3)"></span></li>
+                    <li><span class="dot" onclick="currentSlide(4)"></span></li>
+                </ul>
+
+            </div>
+
+
+        </div>
+        <div class="section" id="secondPage">
+            <div class="secttionW">
+                <div class="tableW">
+                    <div class="table backimg">
+<div class="page2box">
+    <ul>
+        <li><div class="P2info">
+<h1><a><span>Love in the Air</span></a></h1>
+<p class="P2p">
+    다가오는 봄, 스톤헨지 주얼리로<br>
+    화사한 분위기를 연출하세요.
+                  </p>
+                  <p class="P2p"><a>NECKLACE - T1497</a></p>
+                  <a><img class="P2img"src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/SH01/list_T1497.png" alt=""></a>
+        </div>
+        <div class="procuctList">
+            <div class="ListW" style="
+            max-width: 900px;
+        ">
+               <div class="Listup" style="width: 100%; overflow: hidden; position: relative; height: 195px;">
+<ul class="ListUl"><li>
+    <a><img src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/SH01/list_T1496.png"><p>T1496</p></a>
+</li>
+<li>
+    <a><img src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/SH01/list_F0171.png"><p>B9028D</p></a>
+</li>
+<li>
+    <a><img src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/SH01/list_P1406.png"><p>P1406</p></a>
+</li>
+<li>
+    <a><img src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/SH01/list_T1510.png"><p>F0171</p></a>
+</li>
+<li>
+    <a><img src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/SH01/list_B9032D.png"><p>T1510</p></a>
+</li></ul>
+               </div>
+            </div>
+        </div>
+    </li>
+    </ul>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="3rdPage">
+            <div class="secttionW">
+                <div class="pageW">
+                    <a href="event.html" target="_blank">
+                        <div class="mainImg">
+                            <img src="https://stonehenge.co.kr/img/stmain/main_bts01.jpg">
+                        </div>
+                        <div class="mainGo">
+                            <img src="https://stonehenge.co.kr/img/stmain/main_bts02.png">
+                            <h1>MOMENT OF LIGHT</h1>
+                            <p>방탄소년단과 스톤헨지가 함께 전하는<br>
+                                '아름다운 순간'에 대한 이야기를 기대해주세요.
+                            </p>
+                            <span class="btn">2020.05.18. PM 03:00 (KST)</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="4thPage">
+            <div class="secttionW">
+                <div class="pageW" style="background-image: url(https://stonehenge.co.kr/img/stmain/bigslide5.jpg);">
+                    <a>
+                        <div class="right2">
+                            <h1>
+                                <span class="en">Beautiful Moments</span>
+                                <span class="ko">뷰티플 모먼츠</span></h1>
+                            <p>일상의 소소하지만 소중한 감성을 담은<br>
+                                Beautiful Moments영상 시리즈를 만나보세요</p>
+                            <span class="btn">DISCOVER MORE</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section page5" id="5thPage">
+            <div class="secttionW">
+                <div class="pageW"
+                    style="background-image: url(https://stonehenge.co.kr/img/stmain/main_200213_01.jpg);">
+                    <a>
+                        <div class="right2">
+                            <h1>
+                                <span class="en">Brand Stroy</span>
+                                <span class="ko">브랜드 스토리</span></h1>
+                            <p>스톤헨지는 'Beautful Moments' 슬로건 아래<br>
+                                클래식하고 우아한 이미지를 선보이는 주얼리 브랜드 입니다.</p>
+                            <span class="btn">DISCOVER MORE</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="6thPage">
+            <div class="secttionW">
+                <div class="pageW" style="background-image: url(https://stonehenge.co.kr/img/stmain/main_full.jpg);">
+                    <a>
+                        <div class="right2">
+                            <h1>
+                                <span class="en">Watch Collection</span>
+                                <span class="ko">와치 컬렉션</span></h1>
+                            <p>클래식하고 여성스러운 디자인이<br>
+                                특징인 워치 컬렉션을 만나보세요</p>
+                            <span class="btn">DISCOVER MORE</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section page7" id="7thPage">
+            <div class="secttionW">
+                <div class="serviceW">
+                    <div class="servicemain">
+                        <ul class="servicelist">
+                            <li>
+                                <a>
+                                    <img src="https://stonehenge.co.kr/img/stmain/main3.jpg">
+                                    <div class="serName">
+                                        <p class="serP">사이즈 가이드</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="https://stonehenge.co.kr/img/stmain/main4_200213_01.jpg">
+                                    <div class="serName">
+                                        <p class="serP">개인 상담</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <div class="serName">
+                                        <p class="serP">인그레이빙</p>
+                                    </div>
+                                    <img src="https://stonehenge.co.kr/img/insta/insta3.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <div class="serName">
+                                        <p class="serP">선물 포장</p>
+                                    </div>
+                                    <img src="https://stonehenge.co.kr/img/insta/insta6.jpg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section page8" id="8thPage">
+            <div class="secttionW" style="height: 100%;">
+                <div class="isScroll">
+                    <div class="footconnectW">
+                        <div class="footCon">
+                            <h2>CONNECT WITH STONEHNgE</h2>
+                            <ul class="color">
+                                <li><a target="_blank" href="https://www.facebook.com/stonehengekorea"> <i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/stonehenge_official/"><i
+                                            class="fab fa-instagram"></i></a></li>
+                                <li><a target="_blank" href="https://www.youtube.com/user/stonehengekorea"><i
+                                            class="fab fa-youtube"></i></a></li>
+                                <li><a target="_blank" href="https://pf.kakao.com/_aswxml"><img
+                                            src="https://stonehenge.co.kr/img/icon/kakaoTalk.png"></a></li>
+                            </ul>
+                            <ol class="footOl">
+                                <li><a href=""><img
+                                            src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/CN02/st-insta-200512-00001.jpg"></a>
+                                </li>
+                                <li><a href=""><img
+                                            src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/CN02/st-insta-200508-00001.jpg"
+                                            alt=""></a></li>
+                                <li><a href=""><img
+                                            src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/CN02/st-insta-200515-00001.jpg"
+                                            alt=""></a></li>
+                                <li><a href=""><img
+                                            src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/CN02/st-insta-200515-00002.jpg"
+                                            alt=""></a></li>
+                                <li><a href=""><img
+                                            src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/CN02/st-insta-200515-00003.jpg"
+                                            alt=""></a></li>
+                                <li><a href=""><img
+                                            src="https://stonehenge.co.kr/admin/upload/STONE/AUTO/CN02/st-insta-200515-00004.jpg"
+                                            alt=""></a></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <script>
+                        /* 이메일 체크, 이용동의 체크 */
+                        var emailPat = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+                        function chkEmail(){
+                            var frm= document.forms['form1'];
+                            var email = frm.mail.value.trim();
+                            document.getElementById("a").innerHTML = "";
+                            document.getElementById("b").innerHTML = "";
+                            if(email == ""){
+                                alert("Emeil을 입력해 주세요");
+                                frm['mail'].focus();
+                                return;
+                            }
+                            if(!emailPat.test(email)){
+                                document.getElementById("a").innerHTML = "잘못된 email 입니다";                         
+                                frm['mail'].focus();
+                                return;
+                            }
+                            if(!frm["check"].checked){
+                                document.getElementById("b").innerHTML = "개인정보를 동의해주세요";  
+                                return;     
+                            }
+                        frm.submit();
+                        }
+                    </script>
+                    <div class="emailW">
+                        <div class="emailsub">
+                            <div class="mailinput">
+                                <h2>뉴스레터 가입</h2>
+                                <p>가장 먼저 스톤헨지의 소식을 받아보세요!</p>
+                                <form name="form1" action="https://www.w3schools.com/action_page.php">
+                                <div class="meilbox">
+                                    <input type="email" name="mail" placeholder="EMAIL">
+                                    <p id="a"></p>
+                                </div>
+                                <div class="meilagree">
+                                    <label>
+                                        <input type="checkbox" name="check" id="in">
+                                        <span for="in"></span>
+                                        <p>
+                                            스톤헨지 뉴스레터 개인정보 이용동의 (<a href="">약관보기</a>)</p>
+                                            <p id="b"></p>
+                                    </label>
+                                </div>
+                            </form>
+                            <button class="emilbtn" onclick="chkEmail();">SUBSCRIBE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footlast">
+                        <div class="footer">
+                            <div class="footend">
+                                <ul class="footUl">
+                                    <li>
+                                        <span class="fTitle">CUSTOMER SERVICE</span>
+                                        <ul class="fooUl_ul">
+                                            <li><a>FAQ</a></li>
+                                            <li><a>A/S Info</a></li>
+                                            <li><a>Site Map</a></li>
+                                            <li><a>Contact us</a></li>
+                                            <li><a>Find A Store</a></li>
+                                            <li><a>Leave a Message</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="fTitle">OUR COMPANY</span>
+                                        <ul class="fooUl_ul">
+                                            <li><a>Company Info</a></li>
+                                            <li><a>CEO message</a></li>
+                                            <li><a>Social Responsibility</a></li>
+                                            <li><a>Core Value</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="fTitle">FAMILY SITE</span>
+                                        <ul class="fooUl_ul">
+                                            <li><a>GALLERY O'CLOCK</a></li>
+                                            <li><a>TROIS ROIS</a></li>
+                                            <li><a>ROSEMONT</a></li>
+                                            <li><a>＊PATEK PHILIPPE</a></li>
+                                            <li><a>＊CHOPARD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="fTitle">LEGAL & COOKIES</span>
+                                        <ul class="fooUl_ul">
+                                            <li><a>Terms Of Use</a></li>
+                                            <li><a>Privacy Policy</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="end">
+                                <p>
+                                    <span>서울특별시 동작구 보라매로 5길 15 전문건설회관 10층, 23층 우림FMG. 고객센터 : 02-3284-1300</span><br>
+                                    Copyright ⓒ 2018 STONEHENgE Jewelry. All Rights Reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+    <a class="top" href="#mainPage">TOP</a>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active2", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active2";
+        }
+       
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            var warp = document.getElementById("warp");
+            var nav =  document.getElementById("nav");
+            var logo1 = document.getElementById("logo1");
+            var logo2 =  document.getElementById("logo2");
+                if (document.body.scrollTop > 5000 || document.documentElement.scrollTop > 5000) { // 6000
+                    warp.style.maxWidth= "none";
+                    warp.style.backgroundColor= "white";
+                    nav.style.display= "none";
+                    logo1.style.display= "none";
+                  document.getElementById("logo2").style.display= "block";
+                } else {
+                    warp.style.maxWidth= "1300px";
+                    warp.style.backgroundColor= "#FFFFFF00";
+                 nav.style.display= "block";
+                  logo1.style.display= "block";
+                  logo2.style.display= "none";
+                }
+              }
+   
+    </script>
 </body>
 
 </html>
