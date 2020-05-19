@@ -5,11 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>page1</title>
+<title>JSP response</title>
 </head>
 <body>
-<h1>page1</h1>
-<a href="Hello.jsp">Hello</a><br> <!-- request가 발생    -->
-<button onclick="history.back()">back</button> <!-- history.back() : 이전화면으로 돌아감, request가 발생안하고 돌아감 -->
+<h2>JSP로 HTML문서 만들기</h2>
 </body>
 </html>
