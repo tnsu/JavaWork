@@ -12,7 +12,7 @@ DROP TABLE TEST_WRITE CASCADE CONSTRAINTS;
 CREATE TABLE test_file
 (
 	bf_uid number NOT NULL,
-	bf_sourse varchar2(200) NOT NULL,
+	bf_source varchar2(200) NOT NULL,
 	bf_file varchar2(200) NOT NULL,
 	wr_uid number NOT NULL,
 	PRIMARY KEY (bf_uid)

@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import common.D;
 
@@ -67,6 +68,51 @@ public class WriteDAO {
 			pstmt.setString(3, name);
 			
 			cnt = pstmt.executeUpdate();
+		} finally {
+			close();			
+		}
+
+		return cnt;
+	}
+	
+	// 새글 작성 <-- 제목, 내용, 작성자 , 첨부파일 들
+	public int insert(String subject, String content, String name,
+			//이미 파일은 저장되어있다.(cos 라이브러리)
+			List<String> originalFileNames,  // 원본 파일 명(들)
+			List<String> fileSystemNames // 저장된 파일 명(들)
+			) throws SQLException {
+		int cnt = 0;
+		int uid = 0; // INSERT 된 글의 wr_uid 값
+		try {			
+			// 자동 생성된 컬럼의 이름들이 담긴 배열 준비(auto-generated keys)
+			String [] generatedCols = {"wr_uid"};
+			
+			// Statement 나 PreoaredStatement 생성지 두번째 매개변수로 auto-generated keys 배열 넘겨줌
+			pstmt = conn.prepareStatement(D.SQL_WRITE_INSERT, generatedCols);
+			pstmt.setString(1, subject);
+			pstmt.setString(2, content);
+			pstmt.setString(3, name);
+			
+			cnt = pstmt.executeUpdate();
+			// auto-generated keys 값뽑아오기 
+			rs = pstmt.getGeneratedKeys();
+			if(rs.next()) {
+				uid = rs.getInt(1); // 첫번째 컬럼
+			}
+			
+			//첨부파일(들) 정보 테이블에 INSERT 하기
+			pstmt = conn.prepareStatement(D.SQL_FILE_INSERT);
+			//첨부 파일이 여러개이면 for문
+			for (int i = 0; i < originalFileNames.size(); i++) {
+				pstmt.setString(1, originalFileNames.get(i));
+				pstmt.setString(2, fileSystemNames.get(i));
+				pstmt.setInt(3, uid);
+				pstmt.executeUpdate();
+			}
+			
+			
+			
+			
 		} finally {
 			close();			
 		}

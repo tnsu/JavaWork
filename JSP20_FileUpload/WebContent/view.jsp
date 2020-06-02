@@ -47,7 +47,28 @@ UID : ${list[0].uid }<br>
 ${list[0].content }
 </div>
 <hr>
-<br>
+<%-- 첨부파일 및 다운로드 링크 --%>
+		<%-- 0보다 커야 들어옴 --%>
+<c:if test="${fn:length(file) > 0 }">
+	<h4>첨부파일</h4>
+	<ul>
+		<c:forEach var="element" items="${file }">
+			<li><a href="download.do?uid=${element.uid }">${element.source }</a></li>
+		</c:forEach>
+		
+		<%-- 이미지 인경우 보여주기 --%>
+		<c:forEach var="element" items="${ file}">
+			<c:if test="${element.image == true }">
+				<div style="width: 300px">
+				<img style="width:100%; height:auto"
+						src="upload/${element.file }"/>
+				</div>
+			</c:if>
+		</c:forEach>
+	</ul>
+</c:if>
+
+	<br>
 <button onclick="location.href='update.do?uid=${list[0].uid}'">수정하기</button>
 <button onclick="location.href = 'list.do'">목록보기</button>
 <button onclick="chkDelete(${list[0].uid})">삭제하기</button>

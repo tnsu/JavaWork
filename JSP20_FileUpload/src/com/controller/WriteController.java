@@ -87,6 +87,11 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "deleteOk.jsp";
 			break;	
+		case "/download.do":
+			command = new DownloadCommand();
+			command.execute(request, response);
+			// 굳이 view 필요하지 않다.
+			break;
 		} // end switch
 		
 		// request 를 위에서 결정된 view 에 forward 해줌.

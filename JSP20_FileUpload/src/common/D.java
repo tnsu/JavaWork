@@ -38,11 +38,11 @@ public class D {
 	
 	//특정글(WR_UID) 의 첨부파일들을 SELECT
 	public static final String SQL_FILE_SELECT = 
-			"SELECT bf_uid, bf_sourse, bf_file, FROM test_file WHERE wr_uid = ? ORDER BY bf_uid DESC";
+			"SELECT bf_uid, bf_source, bf_file FROM test_file WHERE wr_uid = ? ORDER BY bf_uid DESC";
 	
 	// 특정 첨부파일 (bf_uid) 하나를 SELECT
 	public static final String SQL_FILE_SELECT_BY_UID = 
-			"SELECT bf_uid, bf_sourse, bf_file, FROM test_file WHERE bf_uid = ?";
+			"SELECT bf_uid, bf_source, bf_file FROM test_file WHERE bf_uid = ?";
 	
 	// 특정 첨부파일 (bf_uid) 하나를 DELETE
 	public static final String SQL_FILE_DELETE_BY_UID =

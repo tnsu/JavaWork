@@ -2,7 +2,7 @@ package com.lec.beans;
 
 public class FileDTO {
 	private int uid; // bf_uid
-	private String sourse; // bf_sourse
+	private String source; // bf_source
 	private String file; // bf_file
 	private boolean isImage; // 이미지 여부 
 	
@@ -10,12 +10,12 @@ public class FileDTO {
 		super();
 	}
 
-	public FileDTO(int uid, String sourse, String file, boolean isImage) {
+	public FileDTO(int uid, String source, String file) {
 		super();
 		this.uid = uid;
-		this.sourse = sourse;
+		this.source = source;
 		this.file = file;
-		this.isImage = isImage;
+	
 	}
 
 
@@ -27,12 +27,12 @@ public class FileDTO {
 		this.uid = uid;
 	}
 
-	public String getSourse() {
-		return sourse;
+	public String getSource() {
+		return source;
 	}
 
-	public void setSourse(String sourse) {
-		this.sourse = sourse;
+	public void setSource(String source) {
+		this.source = source;
 	}
 
 	public String getFile() {
