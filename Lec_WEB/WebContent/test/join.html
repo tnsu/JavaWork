@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+</head>
+<style>
+
+</style>
+<!-- 주소 API  -->
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    // 핸드폰 숫자만 나오게 한후 -생성
+    $(document).on("keyup", "#phoneNum", function() { $(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(^01.{1})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-") ); });
+    // 생년월일 숫자만 나오게 한후 -생성
+    $(document).on("keyup", "#birth", function() { $(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/,'$1-$2-$3').replace("--", "-")); });
+  
+    // 주소 API
+    function exeAddress(){
+        new daum.Postcode({
+            oncomplete: function(data) { 
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+            // 주소
+            document.getElementById("addressA").value = addr;
+            // 상세주소
+            document.getElementById("addressB").focus();
+            }
+        }).open();
+    }
+
+   function joinSubmit(){
+        var frm = document.joinFrm;
+        //아이디 정규식
+	    var idJ = /^[a-z0-9]{4,12}$/;
+	    // 비밀번호 정규식
+	    var pwJ = /^[A-Za-z0-9]{4,12}$/; 
+        // 이름 정규식
+	    var nameJ = /^[가-힣]{2,6}$/;
+       // 이메일 검사 정규식
+	    var mailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        // 휴대폰 번호 정규식
+        var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
+   }
+
+</script>
+<script>
+
+
+</script>
+<body>
+<h1>회원가입</h1>
+<form action="joinOk.ho" name="joinFrm" method="post">
+<p>이름 : <input type="text" name="name" id="name"></p>
+<p>닉네임 : <input type="text"name="nick" id="nick"></p>
+<p>이메일: <input type="email" name="email" id="email"/></p>
+<p>비밀번호 : <input type="password" name="pw" id="pw"> 비밀번호 확인: <input type="password" name="pwchk" id="pwchk"></p>
+<p>생년월일 : <input type="text" name="birth" id="birth" maxlength="10" > 성별 : <label >남자<input type="radio" name="gender" value="남자" checked></label> 
+    <label>여자<input type="radio" name="gender" value="여자"></label></p>
+    <p>핸드폰 : <input type="tel" name="phoneNum" id="phoneNum" maxlength="13"> sms 수신여부 <label>동의<input type="radio" name="smsok" value="1" checked></label> 
+<label>비동의<input type="radio" name="smsok" value="0"></label></p>
+<p>주소 : <input type="text" name="addressA" id="addressA" placeholder="주소" readonly onclick="exeAddress();"/> <input type="text" name="addressB" id="addressB" placeholder="상세주소"></p>
+
+</form>
+<button type="button" onclick="joinSubmit()">회원가입</button>
+</body>
+</html>
