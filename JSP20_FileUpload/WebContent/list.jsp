@@ -17,7 +17,7 @@ table {
 }
 
 table, th, td {
-	border: 1px solid blue;
+	border: 1px solid pink;
 	border-collapse: collapse;
 text-align: center;
 }
