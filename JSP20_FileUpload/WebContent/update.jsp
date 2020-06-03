@@ -12,9 +12,6 @@
 	</c:when>
 	<c:otherwise>
 	
-
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -37,7 +34,8 @@ function chkSubmit(){
 </script>
 <body>
 <h2>수정</h2>
-<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
+<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()"
+enctype="Multipart/form-data"> <%-- 수정단계에서 파일 추가 가능 Multipart request  --%>
 <input type="hidden" name="uid" value="${list[0].uid }"/>
 작성자 : ${list[0].name}<br> <%-- 작성자 이름 변경 불가 --%>
 제목 : 
@@ -45,6 +43,44 @@ function chkSubmit(){
 내용: <br>
 <textarea name="content">${list[0].content }</textarea>
 <br>
+<%-- 첨부파일 삭제(첨부된 파일의 목록들이 보여짐 --%>
+<c:if test="${ fn:length(file) > 0 }">
+<div style="background-color: #eef; padding: 2px 10px; margin-bottom: 5px; border: 1px solid black; ">
+<h4>첨부파일 - 삭제할 파일을 선택하세요</h4>
+	<div id="delFiles"></div>
+	<c:forEach var="element" items="${file }">
+	<div>
+		<button type='button' onclick="deleteFiles(${element.uid }); $(this).parent().remove();">삭제</button>${element.source }
+	</div>
+	</c:forEach>
+</div>
+
+<script>
+function deleteFiles(fileUid) {
+	// 삭제할 file 의 bf_uid 값을 delfile 에 담에 submit 한다.
+	$("#delFiles").append("<input type='hidden' name='delfile' value='"+fileUid+"'>");
+	
+}
+</script>
+</c:if>
+<%-- 첨부파일  추가--%>
+<div style="background-color: #eef; padding: 2px 10px; margin-bottom: 5px; border: 1px solid black; ">
+	<h4>첨부파일 - 추가</h4>
+	<button type="button" id="btnadd">추가</button>
+	<div id="files"></div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+var i = 0; <%-- 파일 업로드 이름이 달라야하기 때문에 번호를 입력해준다. --%>
+$('#btnadd').click(function() {
+	$('#files').append("<div><input type='file' name='upfile" + i +"'/> <button type='button' onclick='$(this).parent().remove()'>삭제</button></div>"); <%-- --%>
+i++;
+<%--
+if(i == 5){
+	$('#btnadd').remove();
+} --%>
+});
+</script>
 <input type="submit" value="수정"/>
 </form>
 <button onclick="history.back()">이전으로</button>

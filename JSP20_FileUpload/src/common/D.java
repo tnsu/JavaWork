@@ -46,7 +46,7 @@ public class D {
 	
 	// 특정 첨부파일 (bf_uid) 하나를 DELETE
 	public static final String SQL_FILE_DELETE_BY_UID =
-			"DELETE FROM test_file WHERE br_uid = ?";
+			"DELETE FROM test_file WHERE bf_uid = ?";
 	
 	// 특정 글의 (wr_uid) 의 첨부파일 DELETE
 	public static final String SQL_FILE_DELETE_BY_WRUID =

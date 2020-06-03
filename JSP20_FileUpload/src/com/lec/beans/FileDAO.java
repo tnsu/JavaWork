@@ -1,5 +1,6 @@
 package com.lec.beans;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,6 +9,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
 
 import common.D;
 
@@ -91,6 +98,127 @@ public class FileDAO {
 		return arr;
 	} // end selectFilesByWrUid
 	
+	// 특정글(wr_uid)의 첨부파일 들 삭제
+	// DB 삭제, 파일 삭제
+	public int deleteByWrUid(int wrUid, HttpServletRequest request) throws SQLException{
+		int cnt = 0;
+		
+		FileDTO[] arr = null;
+		try {
+			// 1. 물리적인 파일 삭제
+			pstmt = conn.prepareStatement(D.SQL_FILE_SELECT);
+			pstmt.setInt(1, wrUid);
+			rs = pstmt.executeQuery();
+			
+			arr = createArray(rs);
+			
+			// 물리적인 경로 가져오기
+			ServletContext context = request.getServletContext();
+			String saveDirectory = context.getRealPath("upload");
+			
+			for (FileDTO dto : arr) {
+				File f = new File(saveDirectory, dto.getFile());
+				System.out.println("삭제 시도 -->" +f.getAbsolutePath());
+				
+				if(f.exists()) { // 존재할 경우에만 삭제 하러들어옴
+					if(f.delete()) { // 삭제
+						System.out.println("삭제 성공");
+					}else {
+						System.out.println("삭제 실패");
+					}
+				}else{
+					System.out.println("파일이 존재하지 않습니다.");
+				}// end if
+				
+			}// end for
+			
+			// 2. test_file 테이블 내용 삭제
+			pstmt.close();
+			rs.close();
+			
+			pstmt = conn.prepareStatement(D.SQL_FILE_DELETE_BY_WRUID);
+			pstmt.setInt(1, wrUid);
+			cnt = pstmt.executeUpdate();
+			System.out.println("첨부파일 " + cnt + "개 삭제");
+			
+		}finally {
+			close();
+		}
+		return cnt;
+	}// end deleteByWrUid()
+	
+	// 여러 개의 bf_uid 의 파일(들) 제거 (수정 시 파일 제거)
+	public int deleteByUid(int[] uids, HttpServletRequest request) throws SQLException{
+		if(uids == null || uids.length == 0 ) return 0;
+
+		int cnt = 0;
+		
+		// 101, 204, 319 번 파일을 지우려면? 
+		// DELETE FROM test_file WHERE bf_uid = 101 OR bf_uid = 204 OR bf_uid = 319
+		// DELETE FROM test_file WHERE bf_uid IN (101, 204, 319)
+		
+		try {
+			// 1. 물리적인 파일 삭제
+			StringBuffer sql = new StringBuffer("SELECT bf_file FROM test_file WHERE bf_uid IN (");
+			for (int uid : uids) {
+				sql.append(uid+",");
+			}
+			sql.deleteCharAt(sql.lastIndexOf(",")); // 맨 끝의 콤마 삭제
+			sql.append(")");
+			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql.toString());
+			
+			// 물리적인 경로 획득
+			ServletContext context = request.getServletContext();
+			String saveDirectory = context.getRealPath("upload");
+			if(rs.next()) {
+				String fileName = rs.getString("bf_file"); // 삭제할 파일명
+				File f = new File(saveDirectory, fileName); 
+				
+				System.out.println("수정시 파일 삭제 시도 -->" +f.getAbsolutePath());
+				if(f.exists()) { // 존재할 경우에만 삭제 하러들어옴
+					if(f.delete()) { // 삭제
+						System.out.println("삭제 성공");
+					}else {
+						System.out.println("삭제 실패");
+					}
+				}else{
+					System.out.println("파일이 존재하지 않습니다.");
+				}// end if
+				
+			}
+			// 2.test_file 테이블 삭제
+			 sql = new StringBuffer("DELETE FROM test_file WHERE bf_uid IN (");
+			for (int uid : uids) {
+				sql.append(uid+",");
+			}
+			sql.deleteCharAt(sql.lastIndexOf(",")); // 맨 끝의 콤마 삭제
+			sql.append(")");
+			System.out.println("수정 파일 삭제 : " +sql);
+			
+			//stmt = conn.createStatement();
+			cnt = stmt.executeUpdate(sql.toString());
+		}finally {
+			close();
+		}
+		return cnt;
+	}// end delteByUid()
+	
+	// 특정 글에 첨부파일 추가
+	public int insert(int wrUid, List<String> originalFileNames, List<String> fileSystemNames) throws SQLException{
+		int cnt = 0;
+		
+		// 첨부파일 정보 추가(저장) 하기
+		pstmt = conn.prepareStatement(D.SQL_FILE_INSERT);
+		for (int i = 0; i < originalFileNames.size(); i++) {
+			pstmt.setString(1, originalFileNames.get(i));
+			pstmt.setString(2, fileSystemNames.get(i));
+			pstmt.setInt(3, wrUid);
+			cnt += pstmt.executeUpdate();
+		}// end for
+		return cnt;
+	} // end insert()
 
 } // end DAO
 

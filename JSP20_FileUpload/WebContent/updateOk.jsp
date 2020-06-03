@@ -13,7 +13,7 @@
 	<c:otherwise>
 		<script>
 			alert('수정 성공');
-			location.href = "view.do?uid=${param.uid}";
+			location.href = "view.do?uid=${uid}"; <%-- 수정 param.uid 에서 파람에 담겨있던 uid가 없어서 에러가 뜬것 --%>
 		</script>
 	</c:otherwise>
 </c:choose>

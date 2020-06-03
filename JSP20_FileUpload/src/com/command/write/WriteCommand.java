@@ -59,7 +59,7 @@ public class WriteCommand implements Command {
 				originalFileNames.add(originalFileName);
 				fileSystemNames.add(filesystemName);
 			}
-		}
+		}// end while
 		
 		// 매개변수 받아오기
 		String name = multi.getParameter("name"); // MultipartRequest 객체 사용!!
