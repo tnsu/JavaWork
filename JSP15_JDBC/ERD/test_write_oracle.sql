@@ -53,6 +53,7 @@ col wr_viewcnt for 99;
 col wr_regdate for a10;
 
 SELECT * FROM test_write;
+SELECT * FROM test_write ORDER BY ;
 
 DELETE FROM TEST_WRITE WHERE WR_UID >10;
 

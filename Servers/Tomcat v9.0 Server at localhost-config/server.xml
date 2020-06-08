@@ -171,7 +171,7 @@
 	
 	
 	
-		<Context docBase="JSP20_FileUpload" path="/JSP20_FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:JSP20_FileUpload"/></Host>
+		<Context docBase="JSP20_FileUpload" path="/JSP20_FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:JSP20_FileUpload"/><Context docBase="JSPEX_AJAX_SPA" path="/JSPEX_AJAX_SPA" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_AJAX_SPA"/></Host>
 		<!--InitialContext  사용 가능케 함  -->
 		<!-- <Context docBase="JSP17_ConnectionPool"
 		path="/JSP17_ConnectionPool" reloadable="true"
