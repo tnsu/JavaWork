@@ -63,7 +63,7 @@ public class AjaxController extends HttpServlet {
 			new UpdateCommand().execute(request, response);
 			new AjaxResultCommand().execute(request, response);
 			break;
-		case "/delete.ajax": // F 글 삭제
+		case "/deleteOk.ajax": // F 글 삭제
 			new DeleteCommand().execute(request, response);
 			new AjaxResultCommand().execute(request, response);
 			break;

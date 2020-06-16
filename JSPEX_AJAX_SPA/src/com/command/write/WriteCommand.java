@@ -24,16 +24,28 @@ public class WriteCommand  implements Command{
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
 		
-		// 유효성 체크  null 이거나, 빈문자열이면 이전화면으로 돌아가기
-		if(name != null && subject != null && 
-				name.trim().length() > 0 && subject.trim().length() > 0){			
+		if(name == null || name.trim().length() == 0) {
+			message.append("[유효하지 않는 parmeter : 작성자 필수");
+		}else if(subject == null || subject.trim().length() ==0){
+			message.append("[유효하지 않는 parmeter : 글제목 필수");
+			
+		}else {
 			try {			
 				cnt = dao.insert(subject, content, name); // 성공시 cnt =1
+				if(cnt == 0) {
+					message.append("[트랜젝션 실패 : 0 insert");
+				}else {
+					status = "OK"; // 정상적으로 드랜잭션 수행하고 cnt 가 1 일떄 OK 되어야함
+				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
+				message.append("[트랜잭션 에러 : " + e.getMessage() + "]");
 			}
 		} // end if
 		request.setAttribute("result", cnt);
+		request.setAttribute("status", status);
+		request.setAttribute("message", message.toString());
+		
 		
 	} // end execute()
 } // end Command

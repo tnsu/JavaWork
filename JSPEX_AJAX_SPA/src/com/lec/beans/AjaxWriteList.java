@@ -8,7 +8,7 @@ public class AjaxWriteList extends AjaxWriteResult{
 	@JsonProperty("data")
 	private List<WriteDTO> list; // 데이터 목록
 	
-	private int page ; // 현재페이지
+	private int page ; // 현재페이지AjaxWriteList.java
 	
 	@JsonProperty("totalpage")
 	private int totalPage; // 총 몇 페이지 분량
@@ -19,7 +19,7 @@ public class AjaxWriteList extends AjaxWriteResult{
 	@JsonProperty("writepages")
 	private int writePages; // 한[페이징]에 몇개의 '페이지'를 표현할 것인가
 	
-	@JsonProperty("pagdrows")
+	@JsonProperty("pagerows")
 	private int pageRows; // 한'페이지' 에 몇개의 글을 리스트 할것인가
 
 	

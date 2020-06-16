@@ -19,23 +19,36 @@ public class UpdateCommand implements Command {
 		String status = "FAIL"; // 기본 FAIL
 		
 
-		int uid = Integer.parseInt(request.getParameter("uid"));
+		String param = request.getParameter("uid");
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
 
-		if (subject != null && subject.trim().length() > 0) {
+		// 유효성 검사
+		if(param == null) {
+			message.append("[유효하지 않은 parmeter 0 or null]");
+		}else if(subject == null || subject.trim().length() == 0 ) {
+			message.append("[유효하지 않은 parmeter : 글 제목 필수]");
+		}else {
 			try {
+				int uid = Integer.parseInt(param);
+				
 				cnt = dao.update(uid, subject, content);
-
+				status = "OK";
+				
+				if(cnt == 0) {
+					message.append("[0 update]");
+				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				//e.printStackTrace();
+				message.append("[트랜잭션 에러 : "+ e.getMessage()+"]");
+			}catch (Exception e) {
+				message.append("[유효하지 않은 parameter ]" + param);
+				
 			}
 		} // end if
-		request.setAttribute("updateOk", cnt);
-		request.setAttribute("upUid", uid);
+		request.setAttribute("result", cnt);
 		request.setAttribute("status", status);
 		request.setAttribute("message", message.toString());
-
 	}
 
 }

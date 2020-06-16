@@ -5,9 +5,6 @@ public class AjaxWriteResult {
 	private String status; // 처리결과
 	private String message; // 결과 메세지
 
-	
-	
-	
 	public AjaxWriteResult() {
 		super();
 	}
