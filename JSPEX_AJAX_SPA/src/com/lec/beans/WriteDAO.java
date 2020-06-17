@@ -138,9 +138,6 @@ public class WriteDAO {
 		}finally {
 			close();
 		}
-		
-		
-		
 		return arr;
 	}// end selectFromRow()
 	

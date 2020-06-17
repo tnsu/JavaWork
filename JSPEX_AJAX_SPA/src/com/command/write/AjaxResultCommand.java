@@ -21,6 +21,7 @@ public class AjaxResultCommand implements Command {
 		result.setMessage((String)request.getAttribute("message"));
 		result.setCount((Integer)request.getAttribute("result"));
 		
+		
 		ObjectMapper mapper = new ObjectMapper();
 		
 		
