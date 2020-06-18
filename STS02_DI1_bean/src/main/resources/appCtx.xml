@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 	bean 객체를 정의 --> 
+	<bean id="messageBean" class="com.lec.spring.MessageEng"/>
+<!-- 
+		com.lec.spring.MessageKor messageBean = new com.lec.spring.MessageKor(); 
+		
+		kor생성시 이름이 messageBean 으로 생성됨		
+		
+		파일이 변경되면 스프링 설정 파일만 수정하면 된다.
+-->
+
+
+
+</beans>

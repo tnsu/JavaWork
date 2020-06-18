@@ -1,0 +1,19 @@
+package com.lec.beans;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class AjaxCateList extends AjaxCateResult{
+	@JsonProperty("data")
+	private List<CategoryDTO> list; // 리스트
+
+	public List<CategoryDTO> getList() {
+		return list;
+	}
+
+	public void setList(List<CategoryDTO> list) {
+		this.list = list;
+	}
+	
+}
