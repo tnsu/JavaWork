@@ -25,7 +25,7 @@ public class Logger {
 		
 	}
 	
-	public void logAdivce() {
+	public void logAdvice() {
 		System.out.println("[Advice] ");
 	}
 }

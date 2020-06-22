@@ -31,9 +31,7 @@ public class LogAepect3 {
 	public void beforeAdvice() {
 		System.out.print("[Advice] ");
 	}
-	
-	
-	
+
 }
 
 
