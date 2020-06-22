@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		 http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config/>
+	<!-- 
+	<bean id="dao1" class="com.lec.beans.DAO">
+		<constructor-arg value="DAO_1"/>
+	</bean>
+		 -->
+
+<!-- 	Autowired 될때 다형성이 적용된다 -->
+	<bean id="dao1" class="com.lec.beans.DAOEx">
+		<constructor-arg value="DAO_Ex"/>
+	</bean>
+		 
+	<bean id="regService" class="com.lec.beans.RegisterService">
+		<constructor-arg ref="dao1"/>
+	</bean>
+
+	<!--  이건 에러다.  기본생성자 업기 때문에..  RegisterService 는 반드시 DAO 가 필요하다!
+	<bean id="regService" class="com.lec.beans.RegisterService">
+	 -->
+	 
+<!-- 	 @Autowired 생성자에 자동주입된다,
+		자동주입 하게 되면
+매개변수 ‘타입’ 이 일치하는 빈(bean) 객체를 찾아서(match) 주입하게 된다.
+ -->
+	<bean id="readService" class="com.lec.beans.ReadService"/>
+		
+<!-- 		기본 생성자가 있어서 에러는 안난다(빨간줄) Main에 추가해 실행하면1. 에러가남다.null point -->
+	<bean id="updateService" class="com.lec.beans.UpdateService"/>
+	
+<!-- 	기본생성자가 있으니 에러는 안남 ,but 1. <property> 도 없으니 setter 메소드도 호출되진 않을것이다.. -->
+	<bean id="deleteService" class="com.lec.beans.DeleteService"/>
+
+
+
+
+</beans>
+
+
