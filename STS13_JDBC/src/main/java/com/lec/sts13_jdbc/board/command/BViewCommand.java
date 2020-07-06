@@ -15,8 +15,8 @@ public class BViewCommand implements BCommand{
 		Map<String, Object> map = model.asMap(); 
 		BWriteDAO dao = new BWriteDAO();
 		BWriteDTO dto = (BWriteDTO)map.get("uid");  
-		List<BWriteDTO> list = dao.readByUid(dto);
-		model.addAttribute("list",list);
+//		List<BWriteDTO> list = dao.readByUid(dto);
+//		model.addAttribute("list",list);
 	}
 
 }

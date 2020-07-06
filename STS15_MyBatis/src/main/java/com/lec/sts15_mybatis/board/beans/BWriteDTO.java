@@ -8,12 +8,12 @@ public class BWriteDTO {
 	private String content; // wr_content
 	private String name; // wr_name
 	private int viewCnt; // wr_viewcnt
-	private Timestamp regDate; // wr_regdate
-	
+	private Timestamp regDate; // wr_regdate 절대 시간 의미 
 	
 	public BWriteDTO() {
 		super();
 	}
+	
 	public BWriteDTO(int uid, String subject, String content, String name, int viewCnt, Timestamp regDate) {
 		super();
 		this.uid = uid;

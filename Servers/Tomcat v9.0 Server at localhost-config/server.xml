@@ -151,27 +151,8 @@
         <!-- Access log processes all example.
              Documentation at: /docs/config/valve.html
              Note: The pattern used is equivalent to using pattern="common" -->
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		<Context docBase="STS14_Transaction" path="/sts14_transaction" reloadable="true" source="org.eclipse.jst.jee.server:STS14_Transaction"/><Context docBase="STS15_MyBatis" path="/sts15_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:STS15_MyBatis"/></Host>
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>	
+		<Context docBase="STS18_Security" path="/sts18_security" reloadable="true" source="org.eclipse.jst.jee.server:STS18_Security"/></Host>
 		<!--InitialContext  사용 가능케 함  -->
 		<!-- <Context docBase="JSP17_ConnectionPool"
 		path="/JSP17_ConnectionPool" reloadable="true"

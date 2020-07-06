@@ -56,9 +56,7 @@ public class BWriteDAO {
 				});
 	}
 	
-	public List<BWriteDTO> readByUid(int uid){
-		return template.query(C.SQL_WRITE_SELECT_BY_UID, new BeanProperyRowMapper<BWriteDTO>(BWriteDTO.class));
-	}
+	
 }
 
 
